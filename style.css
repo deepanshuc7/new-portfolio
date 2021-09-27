@@ -623,6 +623,9 @@ footer div{
 
 @media screen and (max-width: 400px) {
     
+    #navbar{
+        padding: 60px 0;
+    }
 
     .hero{
         padding: 0;
