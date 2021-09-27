@@ -615,6 +615,9 @@ footer div{
     footer{
         padding-top: 11rem;
     }
+    .container{
+        padding-bottom: 1rem;
+    }
     
 }
 
@@ -674,8 +677,9 @@ footer div{
 margin-left: 0;
    }
    .r-inner-box .skills li .circles{
-       margin-right: -2rem;
+       margin-right: 0;
    }
+   
     .skills i{
         padding-left: 0;
         font-size: 16px;
@@ -696,8 +700,15 @@ margin-left: 0;
     footer{
         padding-top: 10rem;
     }
+    footer div{
+        padding-left: 1rem;
+    }
     #cont .btn{
         padding: 0;
+    }
+    .social.btm{
+        adding-left: 11rem;
+    margin-right: -0.5rem;
     }
     #cont .right .mob-title{
         font-size: 2rem;
