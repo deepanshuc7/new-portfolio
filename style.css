@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
+
 
 
 .noisy {
@@ -31,22 +35,36 @@
     opacity: .3;
 }
 
-nav{
+#navbar{
+    overflow: hidden;
     display: flex;
-
+    position: fixed;
     width: 100%;
-    height: 20vh;
-    position: sticky;
-    position: -webkit-sticky;
-    /* top: 0; */
-    z-index: 10;
- 
+    top: 0;
+    /* height: 20vh; */
+    padding: 60px 10px;
     align-items: center;
     justify-content: space-around;
+    z-index: 99;
+    transition: 0.4s;
+ 
    /*  background-color: white; */
    /*  opacity: 0.5; */
+  
     
 }
+
+/* #nav-id.fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: #fff;
+    opacity: 0.6;
+    border-bottom: 5px solid #ffffff; 
+ }  */
+
 
 nav .logo a{
     color: #ffc857;
@@ -60,7 +78,7 @@ nav .logo a::after{
     bottom: -0.6rem;
     left: -0.5rem;
     right: -0.5rem;
-    height: 0.6rem;
+    height: 0.4rem;
     background-image: url('./img/underline.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -74,6 +92,21 @@ nav ul{
 }
 nav ul li{
     padding: 0 2rem;
+
+}
+nav ul li a{
+    position: relative;
+}
+nav ul li a:hover::after{
+    content: '';
+    position: absolute;
+    bottom: -0.6rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    height: 0.4rem;
+    background-image: url('./img/underline.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 a{
     text-decoration: none;
@@ -81,13 +114,14 @@ a{
 }
 
 .hero{
+    margin-top: -2rem;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
    background-color: transparent;
     width: 100%;
-    height: 100vh;
+    height: 140vh;
    
    
 }
@@ -155,21 +189,29 @@ a{
     background-size: 58%;
   }
 .bg-img.two{
-    
     position: absolute;
-    left: 34%;
-    top: 23%;
-    /* margin-top: 5rem; */
-    /* margin-bottom: 5rem; */
+    left: 25%;
+    top: 32%;
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-image: url(./img/undraw_Hello_re_3evm.svg);
-    background-size: 68%;
+    background-size: 78%;
+  }
+  .bg-img.three{
+      position: absolute;
+      left: 32%;
+      top: 38%;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: 50%;
+      background-image: url('./img/undraw_contact_us_15o2.svg');
   }
   .left span{
       position: absolute;
-      width: 700px;
+    top: 10%;
+    left: 6%;
       z-index: -2;
       display: block;
       font-size: 200px;
@@ -177,27 +219,21 @@ a{
       opacity: 0.7;
       color: rgb(223, 223, 223);
   }
-  .left h2{
-      /* display: block; */
-      display: none;
-      font-size: 40px;
-      font-weight: 300;
-      
-  }
+
   
   
   .right{
     
     width:60%;
-
+    z-index: 2;
 
   }
 
   .right .r-inner-box{
-    
       width: 100%;
-      height: 70vh;
       padding-left: 5rem;
+      padding-top: 5rem;
+      height: 70vh;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -206,9 +242,9 @@ a{
       line-height: 2rem;
       letter-spacing: 2px;
   }
-  /* hr{
-      width: 80%;
-  } */
+  .r-inner-box.work{
+      height: 100vh;
+  }
   .right .r-inner-box ul li{
       list-style: none;
       padding-bottom: 1rem;
@@ -231,32 +267,383 @@ a{
       padding-left: 1rem;
       
   }
+  .contact-section #cont .right .r-inner-box{
+    padding-top: 25rem;
+  }
   i{
       display: block;
       font-size: 20px;
       padding-right: 1rem;
   }
+  
+  .r-inner-box p{
+      padding-right: 1rem;
+  }
   .right .r-inner-box h3{
       position: relative;
         display: block;
-        padding-bottom: 2rem;
+        padding-bottom: 3rem;
         font-size: 35px;
         color: #ffc857;
 
   }
-  .r-inner-box p{
-      padding-right: 1rem;
-  }
+  
   
 
   .right .r-inner-box h3::after{
     content: '';
     position: absolute;
-    bottom: 0.7rem;
+    bottom: 1.5rem;
     left: -0.5rem;
     right: -0.5rem;
-    height: 0.75rem;
+    height: 0.9rem;
     background-image: url('./img/underline.svg');
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  .r-inner-box .img{
+     
+      margin-top: 2rem;
+      width: 500px;
+      height: auto;
+      background-color: whitesmoke;
+     
+      background-size: 100%;
+      background-repeat: no-repeat;
+      transition: all .7s ease;
+  }
+  .r-inner-box .img:hover{
+      transform: scale(1.2);
+  }
+ 
+.mob-title{
+      display: none;
+      font-size: 60px;
+      font-weight: 300;
+      color: #495057;
+  }
+  .btn{
+    display: inline-block;
+    color: #323031;
+    
+    text-decoration: underline;
+    position: relative;
+    padding: 1rem 0;
+    font-weight: 300;
+    font-size: 18px;
+   /*  line-height: 1;
+    letter-spacing: 0.040em; */
+  }
+  .btn svg{
+    fill: none;
+    stroke: #ffc857;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 338;
+    stroke-dashoffset: 338;
+    stroke-linecap: round;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100% + 60px);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: stroke-dashoffset 0s 0.2s, opacity 0.2s;
+    
+  }
+  /* .contact{
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+  } */
+  .contact-section{
+      position: relative;
+      padding-top: 5rem ;
+      
+  }
+  .contact h2{
+    position: absolute;
+    color: rgb(223, 223, 223);
+    font-size: 200px;
+    opacity: 0.7;
+    z-index: -2;
+    left: 0;
+    top: -9%;
+    font-weight: 300;
+    
+  }
+  .fields{
+    width: 70%;
+    padding-top: 3rem;
+    
+  }
+.form-control {
+    display: block;
+    width: 100%;
+   
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn svg:hover{
+    stroke-dashoffset: 0;
+    opacity: 1;
+    transition: opacity 0s, stroke-dashoffset 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+   input,  textarea {
+    background: transparent;
+    margin-bottom: 2rem;
+    resize: none;
+    color: #323031;
+    box-shadow: none;
+    padding: 24px 21px;
+    border-color: #323031;
+    height: auto;
+   
+}
+button{
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.social.btm{
+   padding: 5rem;
+   padding-left: 0;
+   
+   
+}
+.social.btm i{
+    font-size: 40px;
+    transition: all 0.5s ease;
+    color: #323031;
+}
+
+.social.btm i:hover{
+    transform: scale(1.2);
+    color: #ffc857;
+}
+
+footer div{
+    margin: auto;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+@media screen and (max-width: 1150px) {
+    .hero h3{
+        font-size: 150px;
+        line-height: 150px;
+    }
+    .bg-img.three{
+        background-size: 80%;
+    }
+    .mid{
+        margin-top: -10rem;
+    }
+    .r-inner-box .img{
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 950px){
+    .hero h3{
+        font-size: 120px;
+        line-height: 120px;
+    }
+
+    .left{
+        width: 35%;
+    }
+    .right{
+        width: 65%;
+    }
+    .r-inner-box .img{
+        width: 420px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .hero h3{
+        font-size: 100px;
+        line-height: 100px;
+    }
+    .r-inner-box .img {
+        width: 370px;
+    }
+    .left{
+        width: 30%;
+    }
+    .right{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hero h3{
+        font-size: 90px;
+        line-height: 90px;
+    }
+    .mob-title{
+        display: block;
+       
+    }
+    #cont .right .mob-title{
+        margin-left: -2rem;
+    }
+    .left{
+        width: 0%;
+    }
+    .left span{
+        left: 1%;
+        overflow-x: hidden;
+        font-size: 180px;
+    }
+    .right{
+        width: 100%;
+    }
+    .right .r-inner-box{
+        padding-left: 0;
+        margin-left: -3rem;
+    }
+    .r-inner-box p{
+        margin-left: -2rem;
+    }
+    .bg-img{
+        display: none;
+    }
+    .hero i{
+        top: 1%;
+        right: 2%;
+    }
+    .fields{
+        width: 100%;
+        margin-left: -2rem;
+    }
+
+    footer{
+        padding-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .social{
+        display: none;
+    }
+    nav ul li{
+        padding: 0 1rem;
+    }
+    .hero{
+        padding-left: 5rem;
+    }
+    .hero h3{
+        font-size: 70px;
+        line-height: 80px;
+    }
+    .hero i{
+        top: 4%;
+    right: -4%;
+    font-size: 20rem;
+    }
+    .right{
+        margin: 0 -2rem;
+    }
+    .right .r-inner-box h3 {
+        margin: 0 -3rem;
+       
+    }
+    .right .r-inner-box p{
+        margin: 0 -3rem;
+    }
+    .r-inner-box .img{
+        width: 400px;
+        margin-left: -2rem;
+    }
+    .fields{
+        margin-left: 0;
+    }
+    .btn{
+        margin: 0 -3rem;
+    }
+    .left span{
+        left: 1%;
+        overflow-x: hidden;
+        font-size: 150px;
+    }
+    #cont .right .mob-title{
+        margin-left: -4rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .left{
+        display: none;
+    }
+
+    .hero{
+        padding: 0;
+    }
+    .hero h3{
+        font-size: 60px;
+    }
+    .right{
+        margin: 0;
+        
+    }
+    .mob-title{
+        margin: 0;
+        text-align: center;
+    }
+    .r-inner-box{
+        padding-top: 0;
+    }
+    .r-inner-box h3{
+        padding-left: 8rem;
+    }
+    .right .r-inner-box p{
+        margin: 0;
+        padding: 0;
+        padding-left: 6rem;
+    }
+    .btn{
+        margin: 0;
+        padding: 1rem 6rem;
+    }
+    .hero i{
+        top: 4%;
+    right: 0;
+    font-size: 15rem;
+    }
+    .right .r-inner-box h3::after{
+        left: 7rem;
+    }
+    .r-inner-box ul li{
+        padding-left: 5rem;
+    }
+    .skills i{
+        padding-left: 0;
+        font-size: 16px;
+    }
+    .r-inner-box .img{
+        width: 350px;
+        margin: 0;
+        padding-left: 7rem;
+    }
+}

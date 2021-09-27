@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
   
   <div class="noisy"></div>
-  <nav>
+  <nav id="navbar">
     <div class="logo"><a href="./index.html">Deep</a> </div>
     <ul>
-      <li><a href="">Works</a></li>
-      <li><a href="">About</a></li>
-      <li><a href="">Contact</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#cont">Contact</a></li>
     </ul>
     <div class="social"><a href="https://github.com/deepanshuc7"> <i class="fab fa-github"></i></a><a href="https://www.instagram.com/deepanshu.c7/"><i class="fab fa-instagram"></i></a></div>
   </nav>
@@ -30,23 +31,29 @@
 
   </section>
   
-  <section>
+  <section class="mid">
 
 
 
-      <div class="container">
-          <div class="left" >
-            <h2>About me</h2>
+      <div class="container" id="about" >
+          <div class="left">
             <span>ABOUT ME</span>
             <div class="bg-img one"></div>
             
           </div>
           <div class="right">
+            <h2 class="mob-title">
+              About Me
+            </h2>
             <div class="r-inner-box">
+              
               <h3>Hi!</h3>
               <hr>
               <p>I'm Deepanshu Chaudhary. Welcome to my space. <br> I'm a web designer and front-end developer focussed on crafting clean & user-friendly experiences. </p>
               <p>Do you want to know me?</p>
+              <a class="btn" href=""><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+                <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+              </svg>Download CV</a>
             </div>
             <div class="r-inner-box">
               <h3>Profile</h3>
@@ -80,54 +87,178 @@
       
           </div>
         </div>
-      <div class="container">
-          <div class="left" >
-            <h2>About me</h2>
+      <div class="container" id="work">
+          <div class="left" >           
             <span>MY WORK</span>
             <div class="bg-img two"></div>
           </div>
           <div class="right">
-            <div class="r-inner-box">
-              <h3>Hi!</h3>
-              <p>I'm Deepanshu Chaudhary. Welcome to my space.</p>
+            <h2 class="mob-title">
+              My Work
+            </h2>
+            <div class="r-inner-box work">
+              <h3>Mumbai Cafe UX Design</h3>
+              <p>UX Design Case study for the Mumbai Cafe mobile app.</p>
+              <a class="btn" href=""><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+              <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+            </svg>View here</a>
+             <a href="https://www.deepanshu.space/mumbai-cafe.html"><img class="img one" src="./img/mumbai-cafe.png" alt=""></a>
+   
+             
+             
             </div>
-            <div class="r-inner-box">
-              <h3>r-inner-box 2</h3>
+            <div class="r-inner-box work">
+              <h3>Syncrotech Machines </h3>
+              <p>Website Design for Syncrotech Machines, Pune, IN</p>
+              <a class="btn" href=""><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+                <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+              </svg>View Live here</a>
+             <a href=""><img class="img one" src="./img/syncrotech.png" alt=""></a>
+              
             </div>
-            <div class="r-inner-box">
-              <h3>r-inner-box 3</h3>
+            <div class="r-inner-box work">
+              <h3>Starbucks Clone</h3>
+              <p>Starbucks Rewards page clone from <a href="https://www.frontendpractice.com/project/starbucks">Frontendpractice.com</a></p>
+              <a class="btn" href="https://boring-starbucks-clone.netlify.app/"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+                <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+              </svg>View Live here</a>
+             <a href=""><img class="img one" src="./img/starbucks.png" alt=""></a>
+              
             </div>
-            <div class="r-inner-box">
-              <h3>r-inner-box 4</h3>
+            <div class="r-inner-box work">
+              <h3>Candy Musuem</h3>
+              <p>Simple website using bootstrap</p>
+              <a class="btn" href="https://candy-museum99.netlify.app/"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+                <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+              </svg>View Live here</a>
+             <a href=""><img class="img one" src="./img/candy.png" alt=""></a>
+              
             </div>
-      
+            <div class="r-inner-box work">
+              <h3>Pricing Chart</h3>
+              <p>Fullly Responsive Pricing Table</p>
+              <a class="btn" href="https://pricing-table-css.netlify.app/"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+                <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+              </svg>View Live here</a>
+             <a href=""><img class="img one" src="./img/pricing.png" alt=""></a>
+              
+            </div>
+            
       
           </div>
         </div>
-      <div class="container">
-          <div class="left" style="background:rgb(255, 173, 185);">
-            <h2>about me</h2>
-          </div>
-          <div class="right">
-            <div class="r-inner-box">
-              <h3>r-inner-box 1</h3>
-            </div>
-            <div class="r-inner-box">
-              <h3>r-inner-box 2</h3>
-            </div>
-            <div class="r-inner-box">
-              <h3>r-inner-box 3</h3>
-            </div>
-            <div class="r-inner-box">
-              <h3>r-inner-box 4</h3>
-            </div>
-      
-      
-          </div>
-        </div>
+        
 
 
       
       </section>
+      <section class="contact-section">
+
+        <div class="container" id="cont" >
+          <div class="left">
+            <span>Cont<br>act. </span>
+            <div class="bg-img three"></div>
+            
+          </div>
+          <div class="right">
+            <h2 class="mob-title">
+              Contact Me
+            </h2>
+            <div class="r-inner-box">
+              <p>Get in touch or shoot me an email directly on <span style="font-weight: 700;">c7deepanshu@gmail.com</span></p>
+              
+          
+            <div class="fields">
+              <div class="field half">
+                <input type="text" name="name" id="name" class="form-control" placeholder="Name" aria-required="true" required="">
+              </div>
+              <div class="field half">
+                <input type="email" name="email" id="email" class="form-control" placeholder="Email" aria-required="true" required="">
+              </div>
+              <div class="field">
+                <textarea name="message" id="message" rows="5" class="form-control" placeholder="Message" aria-required="true" required=""></textarea>
+              </div>
+             
+              <button type="submit" class="btn"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+                <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+              </svg>Send Message</button>
+    
+            </div>
+            <div class="social btm"><a href="https://github.com/deepanshuc7"> <i class="fab fa-github"></i></a><a href="https://www.instagram.com/deepanshu.c7/"><i class="fab fa-instagram"></i></a></div>
+              </div>
+      
+      
+          </div>
+        </div>
+        <!-- <div class="contact">
+              <h2>Contact.</h2>
+          <p>Get in touch or shoot me an email directly on <span style="font-weight: 700;">c7deepanshu@gmail.com</span></p>
+        
+        <div class="fields">
+          <div class="field half">
+            <input type="text" name="name" id="name" class="form-control" placeholder="Name" aria-required="true" required="">
+          </div>
+          <div class="field half">
+            <input type="email" name="email" id="email" class="form-control" placeholder="Email" aria-required="true" required="">
+          </div>
+          <div class="field">
+            <textarea name="message" id="message" rows="5" class="form-control" placeholder="Message" aria-required="true" required=""></textarea>
+          </div>
+         
+          <button type="submit" class="btn"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+            <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+          </svg>Send Message</button>
+
+        </div>
+        
+        <div class="social btm"><a href="https://github.com/deepanshuc7"> <i class="fab fa-github"></i></a><a href="https://www.instagram.com/deepanshu.c7/"><i class="fab fa-instagram"></i></a></div>
+      </div> -->
+   
+      
+      </section>
+      <footer>
+        <div class="smile"><i class="far fa-grin-beam"></i><i class="far fa-grin-beam"></i><i class="far fa-grin-beam"></i></div>
+        <div><p>DEEPANSHU.SPACE | ALL RIGHTS RESERVED.</p></div>
+      </footer>
+
+      <!-- <script>
+
+     $(document).ready(function () {  
+        var top = $('#nav-id').offset().top - parseFloat($('#nav-id').css('marginTop').replace(/auto/, 100));
+        $(window).scroll(function (event) {
+          // what the y position of the scroll is
+          var y = $(this).scrollTop();
+      
+          // whether that's below the form
+          if (y >= top) {
+            // if so, ad the fixed class
+            $('#nav-id').addClass('fixed');
+          } else {
+            // otherwise remove it
+            $('#nav-id').removeClass('fixed');
+          }
+        });
+      }); 
+
+      
+    </script> -->
+
+    <script>
+      window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "30px 10px";
+    document.getElementById("navbar").style.backgroundColor = "rgba(255, 255, 255, 0.664)";
+
+    /* document.getElementById("logo").style.fontSize = "25px"; */
+  } else {
+    document.getElementById("navbar").style.padding = "60px 10px";
+    document.getElementById("navbar").style.backgroundColor = "transparent";
+
+    /* document.getElementById("logo").style.fontSize = "35px"; */
+  }
+}
+    </script>
 </body>
 </html>
