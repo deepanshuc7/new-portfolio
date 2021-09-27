@@ -677,7 +677,7 @@ footer div{
 margin-left: 0;
    }
    .r-inner-box .skills li .circles{
-       margin-right: 0;
+       margin-right: 20px;
    }
    
     .skills i{
@@ -707,7 +707,7 @@ margin-left: 0;
         padding: 0;
     }
     .social.btm{
-        adding-left: 11rem;
+        padding-left: 11rem;
     margin-right: -0.5rem;
     }
     #cont .right .mob-title{
