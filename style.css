@@ -544,58 +544,82 @@ footer div{
 }
 
 @media screen and (max-width: 500px) {
+    .left{
+        display: none;
+    }
     .social{
         display: none;
     }
     nav ul li{
         padding: 0 1rem;
     }
-    .hero{
+    /* .hero{
         padding-left: 5rem;
-    }
+    } */
     .hero h3{
         font-size: 70px;
         line-height: 80px;
     }
     .hero i{
         top: 4%;
-    right: -4%;
-    font-size: 20rem;
-    }
-    .right{
-        margin: 0 -2rem;
-    }
-    .right .r-inner-box h3 {
-        margin: 0 -3rem;
-       
-    }
-    .right .r-inner-box p{
-        margin: 0 -3rem;
-    }
-    .r-inner-box .img{
-        width: 400px;
-        margin-left: -2rem;
-    }
-    .fields{
-        margin-left: 0;
+        right: 0%;
+        font-size: 16rem;
     }
     .btn{
-        margin: 0 -3rem;
+        padding-left: 6rem;
     }
+    .btn.form{
+        padding-left: 0;
+    }
+    .right{
+        text-align: center;
+    }
+    .right .r-inner-box h3 {
+       padding-left: 6rem;
+       text-align: left;
+       font-size: 1.8rem;
+       
+    }
+    .right .r-inner-box h3::after {
+        left: 5.5rem;
+    }
+    .right .r-inner-box p{
+        text-align: left;
+        padding-left: 3rem;
+        margin-left: 3rem;
+    }
+    .r-inner-box ul{
+        text-align: left;
+        padding-left: 6rem;
+        width: 100%;
+    }
+    .r-inner-box .img{
+        width: 100%;
+        padding-left: 6rem;
+        
+    }
+    .fields{
+        padding-left: 8rem;
+    }
+    
     .left span{
         left: 1%;
         overflow-x: hidden;
         font-size: 150px;
     }
-    #cont .right .mob-title{
-        margin-left: -4rem;
+    .social.btm{
+        display: block;
+        padding-left: 10rem;
+        margin: auto;
     }
+    footer{
+        padding-top: 11rem;
+    }
+    
 }
 
 @media screen and (max-width: 400px) {
-    .left{
-        display: none;
-    }
+    
 
     .hero{
         padding: 0;
@@ -608,9 +632,8 @@ footer div{
         
     }
     .mob-title{
-        font-size: 4rem;
-        margin: 0;
-        text-align: center;
+        font-size: 2rem;
+       
     }
     #cont .right .mob-title{
         margin-left: 0;
@@ -638,22 +661,37 @@ footer div{
     .right .r-inner-box h3::after{
         left: 7rem;
     }
-    .r-inner-box ul li{
-        padding-left: 5rem;
-    }
+   .r-inner-box ul{
+       padding-left: 5rem;
+   }
+   .r-inner-box .skills li{
+    justify-content: space-between;
+    width: 380px;
+  
+    padding-right: 1rem;
+   }
+   .r-inner-box .skills li span{
+margin-left: 0;
+   }
+   .r-inner-box .skills li .circles{
+       margin-right: -2rem;
+   }
     .skills i{
         padding-left: 0;
         font-size: 16px;
     }
     .r-inner-box .img{
-        width: 380px;
+        width: 400px;
         margin: 0;
         padding:0;
         padding-left: 5rem;
     }
     
     .fields{
-        padding-left: 5rem;
+        padding-left: 3rem;
+        width: 380px;
+    margin: auto;
+    margin-right: -2rem;
     }
     footer{
         padding-top: 10rem;
@@ -662,12 +700,14 @@ footer div{
         padding: 0;
     }
     #cont .right .mob-title{
-        font-size: 3rem;
+        font-size: 2rem;
     }
-    .r-inner-box ul li{
-        width: 390px;
-    }
+    
     .right .r-inner-box .skills i:first-child {
         padding-left: 0;
+    }
+    .right .r-inner-box h3::after {
+        right: -0.5rem;
+        left: 5rem;
     }
 }
