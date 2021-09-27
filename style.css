@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.noisy {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-image: url(./img/noise.gif);
+    background-size: 100px 100px;
+    opacity: .3;
+}
+
+nav{
+    display: flex;
+
+    width: 100%;
+    height: 20vh;
+    position: sticky;
+    position: -webkit-sticky;
+    /* top: 0; */
+    z-index: 10;
+ 
+    align-items: center;
+    justify-content: space-around;
+   /*  background-color: white; */
+   /*  opacity: 0.5; */
+    
+}
+
+nav .logo a{
+    color: #ffc857;
+    font-size: 28px;
+   position: relative;
+}
+
+nav .logo a::after{
+    content: '';
+    position: absolute;
+    bottom: -0.6rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    height: 0.6rem;
+    background-image: url('./img/underline.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav ul{
+    display: flex;
+    
+    list-style: none;
+
+}
+nav ul li{
+    padding: 0 2rem;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.hero{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: transparent;
+    width: 100%;
+    height: 100vh;
+   
+   
+}
+.hero i{
+    position: absolute;
+    top: -4%;
+    right: -1%;
+    font-size: 20rem;
+    font-weight: 200;
+    opacity: 0.1;
+}
+
+
+.hero h3{
+    font-size: 184px;
+    font-weight: 700;
+    color: #323031;
+  
+    text-align: center;
+    line-height: 180px;
+}
+.hero h3 span{
+    color: #42d9c8;
+    color: #ffc857;
+}
+
+.hero p{
+    display: block;
+    padding-top: 4rem;
+    font-size: 20px;
+    font-weight: 300;
+}
+ 
+    
+
+.container{
+
+    display:flex;
+    padding-bottom: 8rem;
+  }
+  
+  .left{
+      padding: 5rem;
+      
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   height: 100vh;
+    width:40%;
+    position: sticky;
+    top:0;
+  }
+  .bg-img.one{
+     
+    position: absolute;
+    left: 40%;
+    top: 35%;
+    /* margin-top: 5rem; */
+    /* margin-bottom: 5rem; */
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: url(./img/undraw_Developer_activity_re_39tg.svg);
+    background-size: 58%;
+  }
+.bg-img.two{
+    
+    position: absolute;
+    left: 34%;
+    top: 23%;
+    /* margin-top: 5rem; */
+    /* margin-bottom: 5rem; */
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: url(./img/undraw_Hello_re_3evm.svg);
+    background-size: 68%;
+  }
+  .left span{
+      position: absolute;
+      width: 700px;
+      z-index: -2;
+      display: block;
+      font-size: 200px;
+      font-weight: 300;
+      opacity: 0.7;
+      color: rgb(223, 223, 223);
+  }
+  .left h2{
+      /* display: block; */
+      display: none;
+      font-size: 40px;
+      font-weight: 300;
+      
+  }
+  
+  
+  .right{
+    
+    width:60%;
+
+
+  }
+
+  .right .r-inner-box{
+    
+      width: 100%;
+      height: 70vh;
+      padding-left: 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      background-color: transparent;
+      line-height: 2rem;
+      letter-spacing: 2px;
+  }
+  /* hr{
+      width: 80%;
+  } */
+  .right .r-inner-box ul li{
+      list-style: none;
+      padding-bottom: 1rem;
+
+  }
+
+  .skills{
+      display: block;
+      width: 400px;
+  }
+  .skills li{
+    display: flex;
+    
+    justify-content: space-between;
+  }
+  .skills li i{
+      color: #323031;
+  }
+  .right .r-inner-box .skills i:first-child{
+      padding-left: 1rem;
+      
+  }
+  i{
+      display: block;
+      font-size: 20px;
+      padding-right: 1rem;
+  }
+  .right .r-inner-box h3{
+      position: relative;
+        display: block;
+        padding-bottom: 2rem;
+        font-size: 35px;
+        color: #ffc857;
+
+  }
+  .r-inner-box p{
+      padding-right: 1rem;
+  }
+  
+
+  .right .r-inner-box h3::after{
+    content: '';
+    position: absolute;
+    bottom: 0.7rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    height: 0.75rem;
+    background-image: url('./img/underline.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
