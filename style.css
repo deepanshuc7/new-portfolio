@@ -608,8 +608,12 @@ footer div{
         
     }
     .mob-title{
+        font-size: 4rem;
         margin: 0;
         text-align: center;
+    }
+    #cont .right .mob-title{
+        margin-left: 0;
     }
     .r-inner-box{
         padding-top: 0;
@@ -642,8 +646,28 @@ footer div{
         font-size: 16px;
     }
     .r-inner-box .img{
-        width: 350px;
+        width: 380px;
         margin: 0;
-        padding-left: 7rem;
+        padding:0;
+        padding-left: 5rem;
+    }
+    
+    .fields{
+        padding-left: 5rem;
+    }
+    footer{
+        padding-top: 10rem;
+    }
+    #cont .btn{
+        padding: 0;
+    }
+    #cont .right .mob-title{
+        font-size: 3rem;
+    }
+    .r-inner-box ul li{
+        width: 390px;
+    }
+    .right .r-inner-box .skills i:first-child {
+        padding-left: 0;
     }
 }
