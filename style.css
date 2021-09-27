@@ -613,7 +613,7 @@ footer div{
         margin: auto;
     }
     footer{
-        padding-top: 11rem;
+        padding-top: 20rem;
     }
     .container{
         padding-bottom: 1rem;
@@ -658,7 +658,7 @@ footer div{
     }
     .hero i{
         top: 4%;
-    right: 0;
+    right: 2%;
     font-size: 15rem;
     }
     .right .r-inner-box h3::after{
@@ -697,11 +697,10 @@ margin-left: 0;
     margin: auto;
     margin-right: -2rem;
     }
-    footer{
-        padding-top: 10rem;
-    }
+    
     footer div{
         padding-left: 1rem;
+        
     }
     #cont .btn{
         padding: 0;
