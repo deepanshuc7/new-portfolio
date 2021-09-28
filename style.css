@@ -150,13 +150,17 @@ a{
     font-size: 184px;
     font-weight: 700;
     color: #323031;
-  
+    display: block;
     text-align: center;
     line-height: 180px;
 }
-.hero h3 span{
-    color: #42d9c8;
+.hero #deep{
+    display: inline-block;
     color: #ffc857;
+}
+.hero #anshu{
+    display: inline-block;
+    color: #323031;
 }
 
 .hero p{
