@@ -45,6 +45,7 @@ html{
   pointer-events: none;
 }
 
+
 #navbar{
     overflow: hidden;
     display: flex;
@@ -641,7 +642,7 @@ footer div{
         padding: 0;
     }
     .hero h3{
-        font-size: 60px;
+        font-size: 56px;
     }
     .right{
         margin: 0;
