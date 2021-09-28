@@ -266,7 +266,7 @@ function scrollFunction() {
 }
 
 
-jQuery(document).ready(function() {
+/* jQuery(document).ready(function() {
 
 var mouseX = 0, mouseY = 0;
 var xp = 0, yp = 0;
@@ -282,7 +282,34 @@ setInterval(function(){
   $("#circle").css({left: xp +'px', top: yp +'px'});
 }, 20);
 
-});
+}); */
+if (window.matchMedia("(min-width: 768px)").matches) {
+    let mousePosX = 0,
+        mousePosY = 0,
+        mouseCircle = document.getElementById("circle");
+
+    document.onmousemove = (e) => {
+        mousePosX = e.pageX - 30;
+        mousePosY = e.pageY - 30;
+    };
+
+    let delay = 6,
+        revisedMousePosX = 0,
+        revisedMousePosY = 0;
+
+    function delayMouseFollow() {
+        requestAnimationFrame(delayMouseFollow);
+
+        revisedMousePosX += (mousePosX - revisedMousePosX) / delay;
+        revisedMousePosY += (mousePosY - revisedMousePosY) / delay;
+
+        mouseCircle.style.top = revisedMousePosY + "px";
+        mouseCircle.style.left = revisedMousePosX + "px";
+    }
+    delayMouseFollow();
+} else{
+  document.getElementById("circle").style.display = "none";
+}
 
     </script>
 
