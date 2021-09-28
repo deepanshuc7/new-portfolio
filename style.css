@@ -606,7 +606,7 @@ footer div{
     .r-inner-box ul{
         text-align: left;
         padding-left: 6rem;
-        width: 100%;
+        
     }
     .r-inner-box .img{
         width: 100%;
@@ -638,7 +638,7 @@ footer div{
 
 @media screen and (max-width: 400px) {
     
-    #navbar{
+    /* #navbar{
         padding: 60px 0;
     }
     #navbar ul{
@@ -741,5 +741,60 @@ margin-left: 0;
     .right .r-inner-box h3::after {
         right: -0.5rem;
         left: 5rem;
+    } */
+
+    .hero h3 {
+        font-size: 53px;
+        line-height: 80px;
+    }
+    .container {
+        padding-bottom: 0rem;
+    }
+    #about .mob-title{
+        padding-bottom: 3rem;
+    }
+    .mob-title{
+        font-size: 3rem;
+    }
+    .right .r-inner-box{
+        padding-top: 0;
+    padding-left: 0;
+    margin-left: -4rem;
+    margin-top: -4rem;
+    padding-right: 0;
+    }
+
+    .r-inner-box p{
+        margin-right: -3rem;
+    }
+
+    .r-inner-box ul{
+       margin-right: -3rem;
+        
+    }
+    .r-inner-box .skills i{
+        padding-left: 0;
+    margin-right: -10px;
+    }
+    .contact-section{
+        padding-top: 0;
+    }
+    form{
+        width: 300px;
+
+    }
+    form .btn{
+        padding: 0;
+    }
+    .social.btm{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* width: 100%; */
+        padding-left: 83px;
+        padding-top: 16rem;
+    }
+    #cont .right{
+        height: 40rem;
     }
 }
