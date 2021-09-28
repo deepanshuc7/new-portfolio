@@ -36,7 +36,7 @@ html{
 }
 .circle {
 	position: absolute;
-  border: solid 1px #ccc;
+  border: solid 1px #ffc857;
 	width: 60px; 
 	height: 60px; 
   border-radius: 50%;  
