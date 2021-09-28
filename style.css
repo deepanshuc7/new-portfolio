@@ -51,13 +51,14 @@ html{
     display: flex;
     position: fixed;
     width: 100%;
-    top: 0;
+    top: -20%;
     /* height: 20vh; */
     padding: 60px 10px;
     align-items: center;
     justify-content: space-around;
     z-index: 99;
     transition: 0.4s;
+    opacity: 0;
  
    /*  background-color: white; */
    /*  opacity: 0.5; */

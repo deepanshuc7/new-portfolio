@@ -330,7 +330,7 @@ gsap.from('.l-span', {opacity: 0, duration: 1, x: -50,delay: 2}); */
     var tl = gsap.timeline({defaults:{duration:1}})
 
 
-    tl.from("nav", {y: -400, opacity: 0})
+    tl.to("nav", {top: 0, opacity: 1, ease: "power1.out"})
     .from('#hi', {y:-50, opacity: 0})
     .from('#deep', {x: -50, opacity: 0},"-=1")
     .from('#anshu', {x: 50, opacity: 0}, "-=1")
