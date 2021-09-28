@@ -637,6 +637,9 @@ footer div{
     #navbar{
         padding: 60px 0;
     }
+    #navbar ul{
+        margin-right: -1rem;
+    }
 
     .hero{
         padding: 0;
