@@ -139,7 +139,7 @@ a{
 .hero i{
     position: absolute;
     top: -4%;
-    right: -1%;
+    right: 0;
     font-size: 20rem;
     font-weight: 200;
     opacity: 0.1;
