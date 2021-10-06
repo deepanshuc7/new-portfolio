@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./polyfill.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>	
 
@@ -24,11 +25,11 @@
   <div class="noisy"></div>
   <span id="circle" class="circle"></span>
   <nav id="navbar">
-    <div class="logo"><a href="#hero">Deep</a> </div>
+    <div class="logo"><a href="" class="scroll-to-top">Deep</a> </div>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#cont">Contact</a></li>
+      <li><a href="" class="scroll-to-about">About</a></li>
+      <li><a href="" class="scroll-to-work">Work</a></li>
+      <li><a href="" class="scroll-to-cont">Contact</a></li>
     </ul>
     <div class="social"><a href="https://github.com/deepanshuc7"> <i class="fab fa-github"></i></a><a href="https://www.instagram.com/deepanshu.c7/"><i class="fab fa-instagram"></i></a></div>
   </nav>
@@ -207,29 +208,7 @@
       
           </div>
         </div>
-        <!-- <div class="contact">
-              <h2>Contact.</h2>
-          <p>Get in touch or shoot me an email directly on <span style="font-weight: 700;">c7deepanshu@gmail.com</span></p>
         
-        <div class="fields">
-          <div class="field half">
-            <input type="text" name="name" id="name" class="form-control" placeholder="Name" aria-required="true" required="">
-          </div>
-          <div class="field half">
-            <input type="email" name="email" id="email" class="form-control" placeholder="Email" aria-required="true" required="">
-          </div>
-          <div class="field">
-            <textarea name="message" id="message" rows="5" class="form-control" placeholder="Message" aria-required="true" required=""></textarea>
-          </div>
-         
-          <button type="submit" class="btn"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
-            <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
-          </svg>Send Message</button>
-
-        </div>
-        
-        <div class="social btm"><a href="https://github.com/deepanshuc7"> <i class="fab fa-github"></i></a><a href="https://www.instagram.com/deepanshu.c7/"><i class="fab fa-instagram"></i></a></div>
-      </div> -->
    
       
       </section>
@@ -238,27 +217,7 @@
         <div><p>DEEPANSHU.SPACE | ALL RIGHTS RESERVED.</p></div>
       </footer>
 
-      <!-- <script>
-
-     $(document).ready(function () {  
-        var top = $('#nav-id').offset().top - parseFloat($('#nav-id').css('marginTop').replace(/auto/, 100));
-        $(window).scroll(function (event) {
-          // what the y position of the scroll is
-          var y = $(this).scrollTop();
       
-          // whether that's below the form
-          if (y >= top) {
-            // if so, ad the fixed class
-            $('#nav-id').addClass('fixed');
-          } else {
-            // otherwise remove it
-            $('#nav-id').removeClass('fixed');
-          }
-        });
-      }); 
-
-      
-    </script> -->
 
     <script>
       window.onscroll = function() {scrollFunction()};
@@ -366,35 +325,33 @@ var tl = gsap.timeline({defaults:{duration:1}})
 
 
 
+    // add event listener on load
+    window.addEventListener('load', function() {
 
+// scroll to bottom
+document.querySelector('.scroll-to-about').addEventListener('click', function(e) {
+  e.preventDefault();
+  /* window.scrollTo({ top: document.body.clientHeight - window.innerHeight, left: 0, behavior: 'smooth' }); */
+  document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+});
+document.querySelector('.scroll-to-work').addEventListener('click', function(e) {
+  e.preventDefault();
+  /* window.scrollTo({ top: document.body.clientHeight - window.innerHeight, left: 0, behavior: 'smooth' }); */
+  document.querySelector('#work').scrollIntoView({ behavior: 'smooth' });
+});
+document.querySelector('.scroll-to-cont').addEventListener('click', function(e) {
+  e.preventDefault();
+  /* window.scrollTo({ top: document.body.clientHeight - window.innerHeight, left: 0, behavior: 'smooth' }); */
+  document.querySelector('#cont').scrollIntoView({ behavior: 'smooth' });
+});
 
-/* if (window.matchMedia("(min-width: 768px)").matches) {
-    let mousePosX = 0,
-        mousePosY = 0,
-        mouseCircle = document.getElementById("circle");
+// scroll to top
+document.querySelector('.scroll-to-top').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+});
+    });
 
-    document.onmousemove = (e) => {
-        mousePosX = e.pageX - 30;
-        mousePosY = e.pageY - 30;
-    };
-
-    let delay = 6,
-        revisedMousePosX = 0,
-        revisedMousePosY = 0;
-
-    function delayMouseFollow() {
-        requestAnimationFrame(delayMouseFollow);
-
-        revisedMousePosX += (mousePosX - revisedMousePosX) / delay;
-        revisedMousePosY += (mousePosY - revisedMousePosY) / delay;
-
-        mouseCircle.style.top = revisedMousePosY + "px";
-        mouseCircle.style.left = revisedMousePosX + "px";
-    }
-    delayMouseFollow();
-} else{
-  document.getElementById("circle").style.display = "none";
-} */
 
   
     </script>
