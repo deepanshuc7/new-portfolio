@@ -5,16 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Deepanshu Chaudhary" />
-    <meta name="description" content="This is my personal portfolio" />
+    <meta
+      name="description"
+      content="Portfolio of Deepanshu Chaudhary, a full stack software engineer and UX/UI designer based in Mechelen, Belgium. Projects in React, TypeScript, React Native, Ruby on Rails, Laravel, and product design."
+    />
+    <meta
+      name="keywords"
+      content="Deepanshu Chaudhary, full stack developer, frontend developer, UX UI designer, React developer, React Native, TypeScript, Ruby on Rails, Laravel, Belgium developer"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ffc857" />
+    <link rel="canonical" href="https://deepanshu.space/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://deepanshu.space/" />
+    <meta property="og:site_name" content="Deepanshu.space" />
+    <meta
+      property="og:title"
+      content="Deepanshu Chaudhary | Full Stack Developer & UX/UI Designer"
+    />
+    <meta
+      property="og:description"
+      content="Full stack software engineer and UX/UI designer building clean web and mobile experiences."
+    />
     <meta
       property="og:image"
       content="https://deepanshu.space/img/heross.png"
     />
     <meta
-      property="og:description"
-      content="Personal Portfolio Website of Deepanshu Chaudhary"
+      name="twitter:card"
+      content="summary_large_image"
     />
-    <meta property="og:title" content="Deepanshu.space | Portfolio" />
+    <meta
+      name="twitter:title"
+      content="Deepanshu Chaudhary | Full Stack Developer & UX/UI Designer"
+    />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Deepanshu Chaudhary: full stack engineering, frontend development, UX/UI design, and product work."
+    />
+    <meta
+      name="twitter:image"
+      content="https://deepanshu.space/img/heross.png"
+    />
     <link rel="shortcut icon" href="https://deepanshu.space/favicon.ico" />
     <link rel="stylesheet" href="./style.css" />
     <link
@@ -27,8 +59,39 @@
     <script src="./polyfill.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Deepanshu Chaudhary",
+        "url": "https://deepanshu.space",
+        "image": "https://deepanshu.space/img/heross.png",
+        "jobTitle": "Full Stack Software Engineer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mechelen",
+          "addressCountry": "Belgium"
+        },
+        "email": "mailto:c7deepanshu@gmail.com",
+        "sameAs": [
+          "https://github.com/deepanshuc7",
+          "https://www.instagram.com/deepanshu.c7/"
+        ],
+        "knowsAbout": [
+          "React",
+          "TypeScript",
+          "React Native",
+          "Ruby on Rails",
+          "Laravel",
+          "UX/UI Design",
+          "Product Design",
+          "Testing",
+          "Agile Development"
+        ]
+      }
+    </script>
 
-    <title>Deepanshu.space | Portfolio</title>
+    <title>Deepanshu Chaudhary | Full Stack Developer & UX/UI Designer</title>
   </head>
   <body>
     <div class="noisy"></div>
@@ -101,19 +164,38 @@
               >Download CV</a
             >
           </div>
-          <div class="r-inner-box profile-box">
-            <h3>Profile</h3>
-            <ul class="profile-list">
-              <li>
-                <i class="fas fa-globe-asia"></i><span>Mechelen, Belgium</span>
-              </li>
-              <li><i class="fas fa-birthday-cake"></i><span>14 April, 2001</span></li>
-              <li>
-                <i class="fas fa-mobile-alt"></i
-                ><span>+32 466341683 / +91 9993468776</span>
-              </li>
-              <li><i class="fas fa-envelope"></i><span>c7deepanshu@gmail.com</span></li>
-            </ul>
+          <div class="r-inner-box impact-box">
+            <h3>Selected Impact</h3>
+            <div class="impact-list">
+              <article class="impact-card">
+                <span>01</span>
+                <p>
+                  Refactored SaaS data fetching from Redux Saga to RTK Query
+                  during a full stack internship at AppTweak.
+                </p>
+              </article>
+              <article class="impact-card">
+                <span>02</span>
+                <p>
+                  Built React and React Native interfaces with reusable
+                  components, existing design patterns, and responsive layouts.
+                </p>
+              </article>
+              <article class="impact-card">
+                <span>03</span>
+                <p>
+                  Delivered tested frontend work using TDD, React Testing
+                  Library, Playwright, and code review workflows.
+                </p>
+              </article>
+              <article class="impact-card">
+                <span>04</span>
+                <p>
+                  Designed product flows from research and wireframes through
+                  high-fidelity prototypes and usability testing.
+                </p>
+              </article>
+            </div>
           </div>
           <div class="r-inner-box skills-box">
             <h3>Skills</h3>
@@ -196,7 +278,6 @@
             <h3>Education</h3>
             <div class="education-list">
               <article class="education-card">
-                <i class="fas fa-user-graduate"></i>
                 <div>
                   <h4>International Digital Experience Design</h4>
                   <p>Thomas More University of Applied Sciences, Mechelen, Belgium</p>
@@ -227,7 +308,6 @@
                 </div>
               </article>
               <article class="education-card">
-                <i class="fas fa-user-graduate"></i>
                 <div>
                   <h4>Diploma in Computer Science</h4>
                   <p>Sage University, Indore, MP, India</p>
@@ -799,10 +879,10 @@
 
         gsap.utils.toArray(".r-inner-box").forEach(function (section) {
           var cardItems = section.querySelectorAll(
-            ".about-card, .profile-list, .education-card, .skill-group, .experience-card, .project-card, .contact-card, .fields"
+            ".about-card, .impact-card, .education-card, .skill-group, .experience-card, .project-card, .contact-card, .fields"
           );
           var chipItems = section.querySelectorAll(
-            ".about-focus li, .skill-group li, .experience-tools li, .project-tools li, .profile-list li, .contact-links a"
+            ".about-focus li, .skill-group li, .experience-tools li, .project-tools li, .contact-links a"
           );
 
           gsap.from(section.querySelector("h3"), {
