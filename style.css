@@ -247,8 +247,8 @@ a {
 }
 
 .right .r-inner-box.about-intro,
-.right .r-inner-box.profile-box,
 .right .r-inner-box.education-box,
+.right .r-inner-box.impact-box,
 .right .r-inner-box.skills-box {
   height: auto;
   min-height: auto;
@@ -256,7 +256,7 @@ a {
 }
 
 .about-card,
-.profile-list,
+.impact-list,
 .education-list,
 .experience-card,
 .project-card,
@@ -266,7 +266,7 @@ a {
 }
 
 .about-card,
-.profile-list,
+.impact-card,
 .education-card,
 .skill-group,
 .experience-card,
@@ -292,24 +292,26 @@ a {
   padding-bottom: 0.6rem;
 }
 
-.profile-list {
+.impact-list {
   display: grid;
-  gap: 0.85rem;
-  padding-left: 1.25rem;
+  gap: 1rem;
 }
 
-.right .r-inner-box .profile-list li {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding-bottom: 0;
+.impact-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
 }
 
-.profile-list i,
-.education-card i {
+.impact-card span {
   color: #ffc857;
-  min-width: 24px;
-  padding-right: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.impact-card p {
+  line-height: 1.8;
 }
 
 .education-list {
@@ -720,7 +722,6 @@ button {
 .experience-card,
 .contact-card,
 .about-card,
-.profile-list,
 .education-card {
   will-change: transform, opacity;
 }
@@ -829,7 +830,7 @@ footer div {
     padding-right: 1rem;
   }
   .right .r-inner-box.about-intro,
-  .right .r-inner-box.profile-box,
+  .right .r-inner-box.impact-box,
   .right .r-inner-box.education-box,
   .right .r-inner-box.skills-box {
     margin-left: 0;
@@ -925,8 +926,9 @@ footer div {
   .right .r-inner-box.about-intro .about-focus {
     padding-left: 1.2rem;
   }
-  .right .r-inner-box.profile-box .profile-list {
-    padding-left: 1.25rem;
+  .right .r-inner-box.impact-box .impact-card p {
+    margin-left: 0;
+    padding-left: 0;
   }
   .right .r-inner-box.education-box .education-list {
     padding-left: 0;
@@ -1124,7 +1126,7 @@ margin-left: 0;
     min-height: auto;
   }
   .right .r-inner-box.about-intro,
-  .right .r-inner-box.profile-box,
+  .right .r-inner-box.impact-box,
   .right .r-inner-box.education-box,
   .right .r-inner-box.skills-box {
     height: auto;
@@ -1220,9 +1222,14 @@ margin-left: 0;
     margin-right: 0;
     padding-left: 1.2rem;
   }
-  .right .r-inner-box.profile-box .profile-list,
+  .right .r-inner-box.impact-box .impact-list,
   .right .r-inner-box.education-box .education-list {
     margin-right: 0;
+  }
+  .right .r-inner-box.impact-box .impact-card p {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
   }
   .right .r-inner-box.education-box .education-topics {
     margin-right: 0;
