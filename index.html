@@ -64,15 +64,26 @@
         </div>
         <div class="right">
           <h2 class="mob-title">About Me</h2>
-          <div class="r-inner-box">
-            <h3>Hi!</h3>
-            <hr />
-            <p>
-              I'm Deepanshu Chaudhary.<br />
-              I'm a web designer and front-end developer focussed on crafting
-              clean & user-friendly experiences. I like to make clean UI and approach the project from user's perspective.
-            </p>
-            <p>Do you want to know me?</p>
+          <div class="r-inner-box about-intro">
+            <h3>Hi, I'm Deepanshu.</h3>
+            <article class="about-card">
+              <p>
+                I design and build thoughtful digital products across web and
+                mobile. My work sits between frontend engineering, product
+                thinking, and UX/UI design, with a focus on clean interfaces
+                that feel useful from the user's point of view.
+              </p>
+              <p>
+                I enjoy turning messy ideas into clear flows, reusable
+                components, and polished experiences that teams can keep
+                improving.
+              </p>
+              <ul class="about-focus">
+                <li>Frontend development with React, TypeScript, and React Native</li>
+                <li>Product-minded UX/UI design from research to prototype</li>
+                <li>Testing, code reviews, and collaborative delivery workflows</li>
+              </ul>
+            </article>
             <a class="btn" href="./resume.pdf" target="_blank"
               ><svg
                 version="1.1"
@@ -90,17 +101,18 @@
               >Download CV</a
             >
           </div>
-          <div class="r-inner-box">
+          <div class="r-inner-box profile-box">
             <h3>Profile</h3>
-            <ul>
+            <ul class="profile-list">
               <li>
-                <i class="fas fa-globe-asia"></i> I live in Mechelen, Belgium
+                <i class="fas fa-globe-asia"></i><span>Mechelen, Belgium</span>
               </li>
-              <li><i class="fas fa-birthday-cake"></i> 14 April, 2001</li>
+              <li><i class="fas fa-birthday-cake"></i><span>14 April, 2001</span></li>
               <li>
-                <i class="fas fa-mobile-alt"></i> +32 466341683 /+91 9993468776
+                <i class="fas fa-mobile-alt"></i
+                ><span>+32 466341683 / +91 9993468776</span>
               </li>
-              <li><i class="fas fa-envelope"></i> c7deepanshu@gmail.com</li>
+              <li><i class="fas fa-envelope"></i><span>c7deepanshu@gmail.com</span></li>
             </ul>
           </div>
           <div class="r-inner-box skills-box">
@@ -180,17 +192,56 @@
               </section>
             </div>
           </div>
-          <div class="r-inner-box">
+          <div class="r-inner-box education-box">
             <h3>Education</h3>
-            <p style="padding-bottom: 20px">
-              <i class="fas fa-user-graduate"></i>Diploma in
-              <b>Computer Science</b> from Sage University, Indore, MP. India
-            </p>
-            <p>
-              <i class="fas fa-user-graduate"></i
-              ><b>Internation Digital Experience Design</b> from Thomas More
-              University of Applied Science, Mechelen, Belgium
-            </p>
+            <div class="education-list">
+              <article class="education-card">
+                <i class="fas fa-user-graduate"></i>
+                <div>
+                  <h4>International Digital Experience Design</h4>
+                  <p>Thomas More University of Applied Sciences, Mechelen, Belgium</p>
+                  <ul class="education-topics">
+                    <li>
+                      <strong>Research:</strong> qualitative research,
+                      quantitative research, market research, trends,
+                      competitors, and user research
+                    </li>
+                    <li>
+                      <strong>Design:</strong> ideation, low-fidelity
+                      wireframing, high-fidelity wireframing, and Figma
+                    </li>
+                    <li>
+                      <strong>User testing:</strong> user flows, personas, user
+                      stories, and usability testing
+                    </li>
+                    <li>
+                      <strong>Development:</strong> frontend with HTML, CSS,
+                      JavaScript, p5.js, and Vue; backend with Laravel, Express,
+                      and Node.js
+                    </li>
+                    <li>
+                      <strong>Project management:</strong> project
+                      methodologies, Agile, Scrum, Waterfall, Kanban, and Lean
+                    </li>
+                  </ul>
+                </div>
+              </article>
+              <article class="education-card">
+                <i class="fas fa-user-graduate"></i>
+                <div>
+                  <h4>Diploma in Computer Science</h4>
+                  <p>Sage University, Indore, MP, India</p>
+                  <ul class="education-topics">
+                    <li><strong>Web development:</strong> HTML, CSS, and JavaScript</li>
+                    <li><strong>Mathematics:</strong> core computer science mathematics</li>
+                    <li><strong>Programming:</strong> Java, C, problem solving, and debugging</li>
+                    <li><strong>Computer fundamentals:</strong> data structures, algorithms, operating systems, and computer networks</li>
+                    <li><strong>Database basics:</strong> SQL, relational database concepts, and data modeling</li>
+                    <li><strong>Software engineering:</strong> SDLC, documentation, version control, and project-based development</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
           </div>
           <div class="r-inner-box experience-box">
             <h3>Experience</h3>
@@ -577,12 +628,22 @@
         </div>
         <div class="right">
           <h2 class="mob-title">Contact Me</h2>
-          <div class="r-inner-box">
-            <p>
-              Get in touch or shoot me an email directly on
-              <span style="font-weight: 700">c7deepanshu@gmail.com</span>
-            </p>
-
+          <div class="r-inner-box contact-box">
+            <h3>Let's Talk</h3>
+            <article class="contact-card">
+              <p>
+                Have a product idea, internship opportunity, or project where
+                design and frontend need to work closely together? Send me a
+                message and I will get back to you.
+              </p>
+              <div class="contact-links">
+                <a href="mailto:c7deepanshu@gmail.com">c7deepanshu@gmail.com</a>
+                <a href="https://github.com/deepanshuc7" target="_blank">GitHub</a>
+                <a href="https://www.instagram.com/deepanshu.c7/" target="_blank"
+                  >Instagram</a
+                >
+              </div>
+            </article>
             <div class="fields">
               <form name="contact" method="POST" data-netlify="true">
                 <div class="field half">
@@ -664,111 +725,146 @@
     </footer>
 
     <script>
-      window.onscroll = function () {
-        scrollFunction();
-      };
+      gsap.registerPlugin(ScrollTrigger);
+      var reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+      var nav = document.getElementById("navbar");
+      var navCompact = false;
 
-      function scrollFunction() {
-        if (
+      function updateNav() {
+        var shouldCompact =
           document.body.scrollTop > 80 ||
-          document.documentElement.scrollTop > 80
-        ) {
-          document.getElementById("navbar").style.padding = "30px 0";
-          document.getElementById("navbar").style.backgroundColor =
-            "rgba(255, 255, 255, 0.664)";
+          document.documentElement.scrollTop > 80;
 
-          /* document.getElementById("logo").style.fontSize = "25px"; */
-        } else {
-          document.getElementById("navbar").style.padding = "60px 0";
-          document.getElementById("navbar").style.backgroundColor =
-            "transparent";
-
-          /* document.getElementById("logo").style.fontSize = "35px"; */
+        if (shouldCompact === navCompact) {
+          return;
         }
+
+        navCompact = shouldCompact;
+        gsap.to(nav, {
+          padding: shouldCompact ? "30px 0" : "60px 0",
+          backgroundColor: shouldCompact
+            ? "rgba(255, 255, 255, 0.72)"
+            : "rgba(255, 255, 255, 0)",
+          duration: reduceMotion ? 0 : 0.25,
+          ease: "power2.out",
+        });
       }
 
-      if (window.matchMedia("(min-width: 768px)").matches) {
-        /* jQuery(document).ready(function() */ var mouseX = 0,
-          mouseY = 0;
-        var xp = 0,
-          yp = 0;
+      window.addEventListener("scroll", updateNav, { passive: true });
+      updateNav();
 
-        $(document).mousemove(function (e) {
-          mouseX = e.pageX - 30;
-          mouseY = e.pageY - 30;
+      if (!reduceMotion && window.matchMedia("(min-width: 768px)").matches) {
+        var circle = document.getElementById("circle");
+        gsap.set(circle, { x: -100, y: -100 });
+
+        window.addEventListener("mousemove", function (e) {
+          gsap.to(circle, {
+            x: e.clientX - 30,
+            y: e.clientY - 30,
+            duration: 0.35,
+            ease: "power3.out",
+            overwrite: true,
+          });
         });
-
-        setInterval(function () {
-          xp += (mouseX - xp) / 6;
-          yp += (mouseY - yp) / 6;
-          $("#circle").css({ left: xp + "px", top: yp + "px" });
-        }, 20);
       } else {
         document.getElementById("circle").style.display = "none";
       }
 
-      /* ============= animation============== */
-      gsap.registerPlugin(ScrollTrigger);
-      var tl = gsap.timeline({ defaults: { duration: 1 } });
+      if (!reduceMotion) {
+        var tl = gsap.timeline({ defaults: { duration: 0.8, ease: "power3.out" } });
 
-      tl.to("nav", { top: 0, opacity: 1, ease: "power1.out" })
-        .from("#hi", { y: -50, opacity: 0 })
-        .from("#deep", { x: -50, opacity: 0 }, "-=1")
-        .from("#anshu", { x: 50, opacity: 0 }, "-=1")
-        .from("#welcome", { y: 50, opacity: 0 });
+        tl.to("nav", { top: 0, opacity: 1 })
+          .from("#hi", { y: -32, opacity: 0 }, "-=0.25")
+          .from("#deep", { x: -42, opacity: 0 }, "-=0.45")
+          .from("#anshu", { x: 42, opacity: 0 }, "-=0.65")
+          .from("#welcome", { y: 28, opacity: 0 }, "-=0.35");
 
-      gsap.from(".l-span", {
-        duration: 1,
-        x: "-20%",
-        opacity: 0,
+        gsap.utils.toArray(".left span").forEach(function (label) {
+          var labelSection = label.closest(".container") || label;
 
-        scrollTrigger: {
-          trigger: ".l-span",
+          gsap.from(label, {
+            x: -48,
+            opacity: 0,
+            duration: 0.9,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: labelSection,
+              start: "top 72%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        });
 
-          //events: onEnter onLeave onEnterBack onLeaveBack
-          toggleActions: "restart complete  reset",
-          //options: play, pause, resume, reset, restart, complete, reverse,none
-        },
-      });
-      gsap.from(".l-span-2", {
-        duration: 1,
-        x: "-20%",
-        opacity: 0,
+        gsap.utils.toArray(".r-inner-box").forEach(function (section) {
+          var cardItems = section.querySelectorAll(
+            ".about-card, .profile-list, .education-card, .skill-group, .experience-card, .project-card, .contact-card, .fields"
+          );
+          var chipItems = section.querySelectorAll(
+            ".about-focus li, .skill-group li, .experience-tools li, .project-tools li, .profile-list li, .contact-links a"
+          );
 
-        scrollTrigger: {
-          trigger: ".l-span-2",
+          gsap.from(section.querySelector("h3"), {
+            y: 24,
+            opacity: 0,
+            duration: 0.55,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 82%",
+              toggleActions: "play none none reverse",
+            },
+          });
 
-          //events: onEnter onLeave onEnterBack onLeaveBack
-          toggleActions: "restart complete  reset",
-          //options: play, pause, resume, reset, restart, complete, reverse,none
-        },
-      });
-      gsap.from(".l-span-3", {
-        duration: 1,
-        x: "-20%",
-        opacity: 0,
-        scrollTrigger: {
-          trigger: ".l-span-3",
+          if (cardItems.length) {
+            gsap.from(cardItems, {
+              y: 36,
+              opacity: 0,
+              duration: 0.65,
+              stagger: 0.08,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: section,
+                start: "top 78%",
+                toggleActions: "play none none reverse",
+              },
+            });
+          }
 
-          //events: onEnter onLeave onEnterBack onLeaveBack
-          toggleActions: "restart complete reverse reset",
-          //options: play, pause, resume, reset, restart, complete, reverse,none
-        },
-      });
-      gsap.from(".r-inner-box", {
-        duration: 1,
-        y: "50vh",
-        opacity: 0,
+          if (chipItems.length) {
+            gsap.from(chipItems, {
+              y: 12,
+              opacity: 0,
+              duration: 0.4,
+              stagger: 0.025,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: section,
+                start: "top 72%",
+                toggleActions: "play none none reverse",
+              },
+            });
+          }
+        });
 
-        stagger: 1,
-        scrollTrigger: {
-          trigger: ".r-inner-box",
-
-          //events: onEnter onLeave onEnterBack onLeaveBack
-          toggleActions: "restart complete ",
-          //options: play, pause, resume, reset, restart, complete, reverse,none
-        },
-      });
+        gsap.utils.toArray(".project-image").forEach(function (image) {
+          gsap.from(image, {
+            y: 28,
+            opacity: 0,
+            scale: 0.98,
+            duration: 0.7,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: image,
+              start: "top 88%",
+              toggleActions: "play none none reverse",
+            },
+          });
+        });
+      } else {
+        gsap.set("nav", { top: 0, opacity: 1 });
+      }
 
       // add event listener on load
       window.addEventListener("load", function () {
