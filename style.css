@@ -96,8 +96,19 @@ nav ul li a {
   transition: all 0.3s ease;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.is-active {
   color: #ffc857;
+}
+
+nav ul li a.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.45rem;
+  height: 2px;
+  background-color: #ffc857;
 }
 nav .social a {
   transition: all 0.3s ease;
@@ -120,7 +131,54 @@ a {
   background-color: transparent;
   width: 100%;
   height: 140vh;
+  overflow: hidden;
+  position: relative;
 }
+.hero-scribbles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.scribble {
+  position: absolute;
+  width: clamp(150px, 18vw, 260px);
+  opacity: 0.38;
+}
+
+.scribble path {
+  stroke: #323031;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  opacity: 0;
+}
+
+.scribble-design {
+  left: 10%;
+  top: 24%;
+  transform: rotate(-10deg);
+}
+
+.scribble-code {
+  right: 9%;
+  top: 31%;
+  transform: rotate(8deg);
+}
+
+.scribble-thinking {
+  left: 58%;
+  top: 62%;
+  transform: rotate(-4deg);
+}
+
+.scribble-design path {
+  stroke: #ffc857;
+}
+
 .hero i {
   position: absolute;
   top: -4%;
@@ -128,6 +186,7 @@ a {
   font-size: 20rem;
   font-weight: 200;
   opacity: 0.1;
+  z-index: 0;
 }
 
 .hero h3 {
@@ -137,6 +196,8 @@ a {
   display: block;
   text-align: center;
   line-height: 180px;
+  position: relative;
+  z-index: 1;
 }
 .hero #deep {
   display: inline-block;
@@ -152,6 +213,8 @@ a {
   padding-top: 4rem;
   font-size: 20px;
   font-weight: 300;
+  position: relative;
+  z-index: 1;
 }
 
 .container {
@@ -400,6 +463,7 @@ a {
   color: #323031;
   font-size: 24px;
   line-height: 1.4;
+  margin: 0.35rem 0 0.5rem;
 }
 
 .experience-date,
@@ -418,6 +482,15 @@ a {
 .experience-role {
   color: #323031;
   font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.experience-date {
+  margin-bottom: 0.25rem;
+}
+
+.experience-meta {
+  margin-bottom: 1rem;
 }
 
 .experience-list {
@@ -450,6 +523,7 @@ a {
 }
 
 .right .r-inner-box .project-card h3 {
+  margin-top: 0.35rem;
   padding-bottom: 0.75rem;
 }
 
@@ -465,6 +539,7 @@ a {
   max-width: 680px;
   color: #323031;
   line-height: 1.8;
+  margin-top: 0.25rem;
 }
 
 .project-highlights {
@@ -533,6 +608,250 @@ a {
 
 .project-image:hover {
   transform: translateY(-4px);
+}
+
+.case-study-page {
+  color: #323031;
+  background-color: transparent;
+}
+
+.case-study {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.case-back-link {
+  display: inline-flex;
+  border-bottom: 2px solid #ffc857;
+  color: #323031;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 3rem;
+  padding-bottom: 0.2rem;
+  transition: color 0.3s ease;
+}
+
+.case-back-link:hover {
+  color: #ffc857;
+}
+
+.case-hero,
+.case-panel,
+.case-section,
+.case-steps article {
+  border-left: 4px solid #ffc857;
+  background-color: rgba(255, 255, 255, 0.45);
+  padding: 1.5rem;
+}
+
+.case-hero {
+  margin-bottom: 1.5rem;
+}
+
+.case-label {
+  color: #495057;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+
+.case-hero h1 {
+  color: #ffc857;
+  font-size: clamp(3rem, 10vw, 7rem);
+  line-height: 1;
+  padding: 0.75rem 0 1.25rem;
+}
+
+.case-hero p,
+.case-section p,
+.case-panel p,
+.case-steps p {
+  max-width: 780px;
+  line-height: 1.8;
+}
+
+.case-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.case-hero-image {
+  display: block;
+  width: 100%;
+  margin-top: 2rem;
+  border: 1px solid rgba(50, 48, 49, 0.12);
+  background-color: whitesmoke;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.case-metrics,
+.case-problem-map,
+.case-decision-grid,
+.case-architecture,
+.case-state-flow,
+.case-checklist {
+  display: grid;
+  gap: 1rem;
+}
+
+.case-metrics {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-problem-map,
+.case-decision-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1.25rem;
+}
+
+.case-architecture {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 1.25rem;
+}
+
+.case-state-flow {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 1.25rem;
+}
+
+.case-checklist {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1.25rem;
+}
+
+.case-metrics article,
+.case-problem-map article,
+.case-decision-grid article,
+.case-architecture article,
+.case-state-flow article,
+.case-checklist article,
+.case-flow article {
+  border: 1px solid rgba(50, 48, 49, 0.12);
+  background-color: rgba(255, 255, 255, 0.58);
+  padding: 1rem;
+}
+
+.case-metrics span,
+.case-flow span,
+.case-architecture span,
+.case-state-flow span {
+  color: #ffc857;
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  padding-bottom: 0.5rem;
+}
+
+.case-metrics h3,
+.case-problem-map h3,
+.case-decision-grid h3,
+.case-checklist h3 {
+  color: #323031;
+  font-size: 18px;
+  line-height: 1.4;
+  padding-bottom: 0.5rem;
+}
+
+.case-decision-label {
+  color: #495057;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding-top: 0.75rem;
+  text-transform: uppercase;
+}
+
+.case-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.case-panel h2,
+.case-section h2 {
+  color: #323031;
+  font-size: 24px;
+  line-height: 1.4;
+  padding-bottom: 0.75rem;
+}
+
+.case-section {
+  margin-top: 1rem;
+}
+
+.case-steps {
+  display: grid;
+  gap: 1rem;
+}
+
+.case-steps article {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.case-steps h3 {
+  color: #323031;
+  font-size: 18px;
+  line-height: 1.4;
+  padding-bottom: 0.5rem;
+}
+
+.case-list {
+  padding-left: 1.2rem;
+}
+
+.case-list li {
+  line-height: 1.8;
+  padding-bottom: 0.6rem;
+}
+
+.case-section a {
+  border-bottom: 2px solid #ffc857;
+  color: #323031;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.case-section a:hover {
+  color: #ffc857;
+}
+
+.case-media {
+  margin-top: 1.25rem;
+}
+
+.case-media img {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(50, 48, 49, 0.12);
+  background-color: whitesmoke;
+}
+
+.case-media figcaption {
+  color: #495057;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 0.5rem;
+}
+
+.case-quote {
+  border-left: 4px solid #ffc857;
+  color: #323031;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.7;
+  margin-top: 1rem;
+  padding-left: 1rem;
 }
 .right .r-inner-box .skills i:first-child {
   padding-left: 1rem;
@@ -735,6 +1054,10 @@ button {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
+  .scribble path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
 }
 
 footer div {
@@ -797,6 +1120,34 @@ footer div {
   .skills {
     grid-template-columns: 1fr;
     width: 100%;
+  }
+  .scribble {
+    width: 140px;
+    opacity: 0.3;
+  }
+  .scribble-design {
+    left: 4%;
+    top: 28%;
+  }
+  .scribble-code {
+    right: 2%;
+    top: 38%;
+  }
+  .scribble-thinking {
+    left: 52%;
+    top: 66%;
+  }
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+  .case-metrics,
+  .case-problem-map,
+  .case-decision-grid,
+  .case-architecture,
+  .case-state-flow,
+  .case-checklist,
+  .case-flow {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -908,6 +1259,9 @@ footer div {
     text-align: left;
     font-size: 1.8rem;
   }
+  .right .r-inner-box > h3 {
+    padding-left: 1rem;
+  }
   .right .r-inner-box p {
     text-align: left;
     padding-left: 0;
@@ -993,6 +1347,16 @@ footer div {
   }
   .container {
     padding-bottom: 1rem;
+  }
+  .case-study {
+    width: min(100% - 1rem, 1120px);
+    padding: 2rem 0;
+  }
+  .case-hero,
+  .case-panel,
+  .case-section,
+  .case-steps article {
+    padding: 1rem;
   }
 }
 
