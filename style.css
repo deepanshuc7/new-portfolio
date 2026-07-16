@@ -1174,11 +1174,12 @@ footer div {
     width: 100%;
   }
   .right .r-inner-box {
-    padding-left: 0;
+    padding-left: 1rem;
     padding-top: 3rem;
     padding-bottom: 3rem;
     margin-left: 0;
     padding-right: 1rem;
+    box-sizing: border-box;
   }
   .right .r-inner-box.about-intro,
   .right .r-inner-box.impact-box,
@@ -1201,6 +1202,7 @@ footer div {
   }
   .r-inner-box p {
     margin-left: 0;
+    padding-right: 0;
   }
   .bg-img {
     display: none;
@@ -1260,11 +1262,12 @@ footer div {
     font-size: 1.8rem;
   }
   .right .r-inner-box > h3 {
-    padding-left: 1rem;
+    padding-left: 0;
   }
   .right .r-inner-box p {
     text-align: left;
     padding-left: 0;
+    padding-right: 0;
     margin-left: 0;
   }
   .r-inner-box ul {
@@ -1338,9 +1341,22 @@ footer div {
     font-size: 150px;
   }
   .social.btm {
-    display: block;
-    padding-left: 0;
-    margin: auto;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 4rem 0 0;
+    box-sizing: border-box;
+  }
+  .social.btm a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .social.btm i {
+    padding-right: 0;
   }
   footer {
     padding-top: 4rem;
@@ -1482,10 +1498,11 @@ margin-left: 0;
   .right .r-inner-box {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    padding-left: 0;
+    padding-left: 1rem;
     margin-left: 0;
     /* margin-top: -4rem; */
     padding-right: 1rem;
+    box-sizing: border-box;
     height: auto;
     min-height: auto;
   }
@@ -1512,9 +1529,22 @@ margin-left: 0;
   }
   .right .r-inner-box.contact-box {
     height: auto;
+    align-items: center;
+    padding-left: 0;
     margin-left: 0;
     min-height: auto;
-    padding-right: 1rem;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .right .r-inner-box.contact-box .contact-card p {
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 0;
+  }
+
+  .right .r-inner-box.contact-box .contact-links {
+    justify-content: center;
   }
 
   .r-inner-box p {
@@ -1531,10 +1561,18 @@ margin-left: 0;
   .contact-section {
     padding-top: 0;
   }
+  .fields {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 1rem 0;
+  }
   form {
-    width: 300px;
+    margin: 0 auto;
+    width: min(100%, 340px);
   }
   form .btn {
+    display: flex;
+    justify-content: center;
     padding: 0;
   }
   .social.btm {
@@ -1544,9 +1582,19 @@ margin-left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 100%; */
-    padding-left: 0;
-    padding-top: 4rem;
+    gap: 2rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 4rem 0 0;
+    box-sizing: border-box;
+  }
+  .social.btm.mob a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .social.btm.mob i {
+    padding-right: 0;
   }
   #cont .right {
     height: auto;
@@ -1581,6 +1629,7 @@ margin-left: 0;
     margin-left: 0;
     margin-right: 0;
     padding-left: 0;
+    padding-right: 0;
   }
   .right .r-inner-box.about-intro .about-focus {
     margin-right: 0;
@@ -1594,6 +1643,7 @@ margin-left: 0;
     margin-left: 0;
     margin-right: 0;
     padding-left: 0;
+    padding-right: 0;
   }
   .right .r-inner-box.education-box .education-topics {
     margin-right: 0;
@@ -1609,6 +1659,7 @@ margin-left: 0;
     margin-left: 0;
     margin-right: 0;
     padding-left: 0;
+    padding-right: 0;
   }
   .right .r-inner-box.work .project-highlights {
     margin-right: 0;
