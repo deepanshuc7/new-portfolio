@@ -112,6 +112,38 @@
       </div>
     </nav>
     <section class="hero" id="hero">
+      <div class="hero-scribbles" aria-hidden="true">
+        <svg
+          class="scribble scribble-design"
+          viewBox="0 0 220 160"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M26 112C58 43 132 24 174 58C210 88 173 141 112 126C61 114 63 63 112 48C150 36 181 55 194 82" />
+          <path d="M42 132C75 126 108 126 142 132" />
+        </svg>
+        <svg
+          class="scribble scribble-code"
+          viewBox="0 0 220 160"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M84 36L38 80L84 124" />
+          <path d="M136 36L182 80L136 124" />
+          <path d="M118 28L100 132" />
+          <path d="M64 142C94 132 126 132 156 142" />
+        </svg>
+        <svg
+          class="scribble scribble-thinking"
+          viewBox="0 0 220 160"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M34 82C50 42 91 34 111 58C123 35 167 45 173 78C202 86 196 130 160 130H72C38 130 24 106 34 82Z" />
+          <path d="M79 93C96 80 117 80 136 93" />
+          <path d="M86 112C101 121 122 121 137 112" />
+        </svg>
+      </div>
       <i class="fas fa-code"></i>
 
       <h3 id="hi">Hi! I'm</h3>
@@ -389,6 +421,7 @@
                 <li>Responsive UI</li>
               </ul>
               <div class="project-actions">
+                <a class="project-link" href="./type-type.html">Read case study</a>
                 <a
                   class="project-link"
                   href="https://type-type-delta.vercel.app/"
@@ -398,8 +431,7 @@
               </div>
               <a
                 class="project-image-link"
-                href="https://type-type-delta.vercel.app/"
-                target="_blank"
+                href="./type-type.html"
                 ><img
                   class="project-image"
                   src="./img/typetype.png"
@@ -559,15 +591,13 @@
               <div class="project-actions">
                 <a
                   class="project-link"
-                  href="https://deepanshu-space.netlify.app/mumbai-cafe.html"
-                  target="_blank"
+                  href="./mumbai-cafe.html"
                   >View case study</a
                 >
               </div>
               <a
                 class="project-image-link"
-                href="https://deepanshu-space.netlify.app/mumbai-cafe.html"
-                target="_blank"
+                href="./mumbai-cafe.html"
                 ><img
                   class="project-image"
                   src="./img/mumbai-cafe.png"
@@ -811,6 +841,17 @@
       ).matches;
       var nav = document.getElementById("navbar");
       var navCompact = false;
+      var navLinks = {
+        about: document.querySelector(".scroll-to-about"),
+        work: document.querySelector(".scroll-to-work"),
+        contact: document.querySelector(".scroll-to-cont"),
+      };
+
+      function setActiveNav(activeKey) {
+        Object.keys(navLinks).forEach(function (key) {
+          navLinks[key].classList.toggle("is-active", key === activeKey);
+        });
+      }
 
       function updateNav() {
         var shouldCompact =
@@ -834,6 +875,36 @@
 
       window.addEventListener("scroll", updateNav, { passive: true });
       updateNav();
+
+      ScrollTrigger.create({
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom center",
+        onEnter: function () {
+          setActiveNav(null);
+        },
+        onEnterBack: function () {
+          setActiveNav(null);
+        },
+      });
+
+      [
+        { key: "about", trigger: "#about" },
+        { key: "work", trigger: "#work" },
+        { key: "contact", trigger: "#cont" },
+      ].forEach(function (section) {
+        ScrollTrigger.create({
+          trigger: section.trigger,
+          start: "top center",
+          end: "bottom center",
+          onEnter: function () {
+            setActiveNav(section.key);
+          },
+          onEnterBack: function () {
+            setActiveNav(section.key);
+          },
+        });
+      });
 
       if (!reduceMotion && window.matchMedia("(min-width: 768px)").matches) {
         var circle = document.getElementById("circle");
@@ -860,6 +931,78 @@
           .from("#deep", { x: -42, opacity: 0 }, "-=0.45")
           .from("#anshu", { x: 42, opacity: 0 }, "-=0.65")
           .from("#welcome", { y: 28, opacity: 0 }, "-=0.35");
+
+        var scribbleGroups = gsap.utils.toArray(".scribble");
+        var scribblePaths = gsap.utils.toArray(".scribble path");
+
+        gsap.set(scribbleGroups, { transformOrigin: "50% 50%" });
+        gsap.set(scribblePaths, {
+          strokeDasharray: 520,
+          strokeDashoffset: 520,
+          opacity: 0,
+        });
+
+        var scribbleTl = gsap.timeline({
+          repeat: -1,
+          repeatDelay: 0.8,
+          defaults: { ease: "power2.inOut" },
+        });
+
+        scribbleGroups.forEach(function (scribble, index) {
+          var paths = scribble.querySelectorAll("path");
+
+          scribbleTl.to(
+            paths,
+            {
+              strokeDashoffset: 0,
+              opacity: 1,
+              duration: 1.1,
+              stagger: 0.12,
+            },
+            index === 0 ? 0.25 : ">-0.35"
+          );
+        });
+
+        scribbleTl
+          .to(
+            scribblePaths,
+            {
+              strokeDashoffset: -520,
+              opacity: 0,
+              duration: 1,
+              stagger: { each: 0.04, from: "random" },
+              ease: "power2.in",
+            },
+            "+=1.1"
+          )
+          .set(scribblePaths, { strokeDashoffset: 520 });
+
+        gsap.to(".scribble-design", {
+          y: -10,
+          rotation: -13,
+          duration: 4.2,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+
+        gsap.to(".scribble-code", {
+          y: 12,
+          rotation: 11,
+          duration: 4.8,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+
+        gsap.to(".scribble-thinking", {
+          y: -8,
+          rotation: -7,
+          duration: 5.2,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
 
         gsap.utils.toArray(".left span").forEach(function (label) {
           var labelSection = label.closest(".container") || label;
@@ -944,6 +1087,7 @@
         });
       } else {
         gsap.set("nav", { top: 0, opacity: 1 });
+        gsap.set(".scribble path", { strokeDashoffset: 0, opacity: 1 });
       }
 
       // add event listener on load
@@ -957,6 +1101,7 @@
             document
               .querySelector("#about")
               .scrollIntoView({ behavior: "smooth" });
+            setActiveNav("about");
           });
         document
           .querySelector(".scroll-to-work")
@@ -966,6 +1111,7 @@
             document
               .querySelector("#work")
               .scrollIntoView({ behavior: "smooth" });
+            setActiveNav("work");
           });
         document
           .querySelector(".scroll-to-cont")
@@ -975,6 +1121,7 @@
             document
               .querySelector("#cont")
               .scrollIntoView({ behavior: "smooth" });
+            setActiveNav("contact");
           });
 
         // scroll to top
@@ -985,6 +1132,7 @@
             document
               .querySelector(".hero")
               .scrollIntoView({ behavior: "smooth" });
+            setActiveNav(null);
           });
       });
     </script>

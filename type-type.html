@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Type Type case study by Deepanshu Chaudhary: a React typing test platform built with TDD, Playwright, UX decisions, product thinking, and scalable architecture."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ffc857" />
+    <link rel="canonical" href="https://deepanshu.space/type-type.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://deepanshu.space/type-type.html" />
+    <meta property="og:title" content="Type Type Case Study | Deepanshu Chaudhary" />
+    <meta
+      property="og:description"
+      content="A detailed case study for Type Type, a tested React typing practice platform."
+    />
+    <meta property="og:image" content="https://deepanshu.space/img/typetype.png" />
+    <link rel="shortcut icon" href="https://deepanshu.space/favicon.ico" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Type Type Case Study | Deepanshu Chaudhary</title>
+  </head>
+  <body class="case-study-page">
+    <main class="case-study">
+      <a class="case-back-link" href="./index.html#work">Back to portfolio</a>
+
+      <section class="case-hero">
+        <p class="case-label">React app / TDD / Playwright / product thinking</p>
+        <h1>Type Type</h1>
+        <p>
+          Type Type is a typing test platform designed to make typing practice
+          feel fast, focused, and measurable. The project looks simple from the
+          outside, but the core challenge was building an interaction-heavy app
+          where every keystroke changes state, feedback, progress, and results.
+        </p>
+        <p>
+          I approached it as both a product and engineering exercise: define the
+          smallest useful practice loop, protect the fragile behavior with
+          tests, and structure the app so future features like multiplayer and
+          richer statistics can be added without rewriting the foundation.
+        </p>
+        <div class="case-actions">
+          <a class="project-link" href="https://type-type-delta.vercel.app/" target="_blank"
+            >View live project</a
+          >
+        </div>
+        <img
+          class="case-hero-image"
+          src="./img/typetype.png"
+          alt="Type Type typing test platform screenshot"
+        />
+      </section>
+
+      <section class="case-grid">
+        <article class="case-panel">
+          <h2>Role</h2>
+          <p>
+            Frontend developer responsible for product flow, React
+            implementation, state handling, test strategy, and UI iteration.
+          </p>
+        </article>
+        <article class="case-panel">
+          <h2>Stack</h2>
+          <p>React, JavaScript, TDD, Playwright, responsive UI patterns.</p>
+        </article>
+        <article class="case-panel">
+          <h2>Product Goal</h2>
+          <p>
+            Help users practice typing with immediate feedback, clear progress,
+            and a simple experience that does not distract from the test itself.
+          </p>
+        </article>
+      </section>
+
+      <section class="case-section case-snapshot">
+        <h2>Project Snapshot</h2>
+        <div class="case-metrics">
+          <article>
+            <span>01</span>
+            <h3>Interaction-first product</h3>
+            <p>
+              The main value is not a static page. It is the accuracy and feel
+              of the typing loop.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Test-protected behavior</h3>
+            <p>
+              The riskiest parts of the app were protected with TDD and
+              end-to-end validation.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Built for iteration</h3>
+            <p>
+              The foundation was kept simple enough to ship, but structured for
+              richer stats and multiplayer later.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Why This Project</h2>
+        <p>
+          I wanted to build a project where the main value did not come from a
+          static layout, but from the quality of the interaction. A typing test
+          is a good challenge because the app has to respond instantly and
+          correctly to every input. Small bugs are easy for users to feel:
+          incorrect character highlighting, timer issues, result mismatches, or
+          state that does not reset cleanly can break trust immediately.
+        </p>
+        <p>
+          That made Type Type a useful project for practicing product thinking,
+          state design, testing discipline, and frontend interaction details in
+          one focused experience.
+        </p>
+        <blockquote class="case-quote">
+          The product question was: how do we make a tiny interaction feel
+          reliable enough that users can trust it over and over again?
+        </blockquote>
+      </section>
+
+      <section class="case-section">
+        <h2>The Problem</h2>
+        <p>
+          Typing practice apps appear straightforward, but the core flow is
+          state-heavy. The app needs to know what the user is typing, what text
+          they are typing against, which character is active, which characters
+          are correct or incorrect, when the test starts, when it ends, and what
+          results should be shown.
+        </p>
+        <p>
+          The challenge was to keep that logic reliable while keeping the user
+          interface minimal. I did not want users to think about the app. I
+          wanted them to start typing, understand their mistakes, and finish with
+          useful feedback.
+        </p>
+        <div class="case-problem-map">
+          <article>
+            <h3>User sees</h3>
+            <p>Prompt text, current character, mistake feedback, and result.</p>
+          </article>
+          <article>
+            <h3>App tracks</h3>
+            <p>Input, expected text, active index, accuracy, time, and status.</p>
+          </article>
+          <article>
+            <h3>Risk</h3>
+            <p>One incorrect state update can make the entire test feel broken.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Core User Flow</h2>
+        <div class="case-flow">
+          <article>
+            <span>Start</span>
+            <p>User enters the test without extra setup.</p>
+          </article>
+          <article>
+            <span>Type</span>
+            <p>Every keystroke updates progress and feedback.</p>
+          </article>
+          <article>
+            <span>Validate</span>
+            <p>The app compares typed input with expected characters.</p>
+          </article>
+          <article>
+            <span>Result</span>
+            <p>User sees completion feedback and can try again.</p>
+          </article>
+        </div>
+        <div class="case-steps">
+          <article>
+            <h3>1. Enter the test quickly</h3>
+            <p>
+              The first screen needed to make the action obvious. The user
+              should not need onboarding or explanation before starting a typing
+              session.
+            </p>
+          </article>
+          <article>
+            <h3>2. Type with live feedback</h3>
+            <p>
+              The main interaction had to show progress and mistakes without
+              visually overwhelming the user. Feedback needed to be visible but
+              not noisy.
+            </p>
+          </article>
+          <article>
+            <h3>3. Finish with clear results</h3>
+            <p>
+              At the end of a test, the app should help the user understand how
+              they performed and encourage another attempt.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Product Decisions</h2>
+        <p>
+          I made product decisions by asking whether each idea helped the user
+          type, understand feedback, or improve over repeated attempts. Anything
+          outside that loop was treated as secondary.
+        </p>
+        <div class="case-decision-grid">
+          <article>
+            <h3>Keep the interface focused</h3>
+            <p class="case-decision-label">Why</p>
+            <p>
+              I avoided adding too many controls or decorative elements because
+              the typing area is the product. The UI should support the practice
+              session, not compete with it.
+            </p>
+            <p class="case-decision-label">Impact</p>
+            <p>Users can understand the task immediately and stay in flow.</p>
+          </article>
+          <article>
+            <h3>Prioritize instant feedback</h3>
+            <p class="case-decision-label">Why</p>
+            <p>
+              Users need to know whether they are on track while typing. Live
+              character feedback is more useful than waiting until the end to
+              show errors.
+            </p>
+            <p class="case-decision-label">Impact</p>
+            <p>Mistakes become easier to notice and correct during practice.</p>
+          </article>
+          <article>
+            <h3>Design for repetition</h3>
+            <p class="case-decision-label">Why</p>
+            <p>
+              Typing practice is repetitive by nature, so resetting the test,
+              starting again, and understanding the result state needed to feel
+              smooth.
+            </p>
+            <p class="case-decision-label">Impact</p>
+            <p>The product feels like a practice tool, not a one-time demo.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Engineering Approach</h2>
+        <p>
+          I treated the typing experience as a small state machine. Instead of
+          thinking only in terms of screens, I thought through the states the app
+          can be in: waiting to start, actively typing, showing mistakes,
+          completing the test, and resetting for another round.
+        </p>
+        <p>
+          This helped make the logic easier to reason about. When the user types
+          a character, the app has to compare it against the expected character,
+          update progress, update feedback, and decide whether the test is
+          complete. Separating those decisions from the visual rendering made the
+          app easier to test and change.
+        </p>
+        <div class="case-architecture">
+          <article>
+            <span>Input</span>
+            <p>Keyboard events and typed characters</p>
+          </article>
+          <article>
+            <span>Logic</span>
+            <p>Comparison, active index, accuracy, completion</p>
+          </article>
+          <article>
+            <span>State</span>
+            <p>Current progress, mistake status, test lifecycle</p>
+          </article>
+          <article>
+            <span>UI</span>
+            <p>Prompt display, feedback, progress, result state</p>
+          </article>
+          <article>
+            <span>Tests</span>
+            <p>Unit behavior, component behavior, end-to-end flow</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Typing Session State Model</h2>
+        <p>
+          A useful way to think about the app was as a session with clear states.
+          This made the behavior easier to reason about and helped define what
+          should be tested.
+        </p>
+        <div class="case-state-flow">
+          <article>
+            <span>Idle</span>
+            <p>Prompt is visible, input is empty, and the timer has not started.</p>
+          </article>
+          <article>
+            <span>Active</span>
+            <p>User is typing, feedback updates, and progress is tracked.</p>
+          </article>
+          <article>
+            <span>Completed</span>
+            <p>The prompt is finished and the app shows the result state.</p>
+          </article>
+          <article>
+            <span>Reset</span>
+            <p>Input and result state are cleared so the user can try again.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Why TDD</h2>
+        <p>
+          I used test-driven development because the highest-risk part of the
+          project was not how the UI looked. It was whether the interaction
+          behaved correctly across many small input changes.
+        </p>
+        <p>
+          The TDD approach also helped me slow down at the right moment. Before
+          writing UI code, I had to define what correct behavior actually meant:
+          what should happen after a correct key, an incorrect key, a completed
+          prompt, or a reset. That made the implementation more intentional.
+        </p>
+        <ul class="case-list">
+          <li>
+            Tests helped define expected behavior before implementation details
+            got too complicated.
+          </li>
+          <li>
+            They made refactoring safer because the core typing logic could be
+            changed without guessing whether old behavior still worked.
+          </li>
+          <li>
+            They encouraged smaller, clearer functions instead of burying all
+            logic inside UI components.
+          </li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>Testing Strategy</h2>
+        <p>
+          The testing strategy followed the same shape as the product risk. The
+          closer something was to the typing interaction, the more important it
+          was to verify.
+        </p>
+        <div class="case-steps">
+          <article>
+            <h3>Unit-level confidence</h3>
+            <p>
+              Core typing behavior was treated as logic that should be tested
+              directly: character matching, progress, completion, and reset
+              behavior.
+            </p>
+          </article>
+          <article>
+            <h3>Component behavior</h3>
+            <p>
+              UI behavior needed to reflect the underlying state clearly. The
+              component layer was tested around what users can see and do.
+            </p>
+          </article>
+          <article>
+            <h3>End-to-end validation</h3>
+            <p>
+              Playwright was used to validate the complete flow like a real user:
+              open the app, type through a test, and reach the expected result.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Examples of Test Cases</h2>
+        <p>
+          I focused test coverage on behavior that would immediately affect
+          trust in the product if it broke.
+        </p>
+        <div class="case-checklist">
+          <article>
+            <h3>Typing behavior</h3>
+            <ul class="case-list">
+              <li>Starts the test when the user begins typing.</li>
+              <li>Marks correct characters correctly.</li>
+              <li>Marks incorrect characters correctly.</li>
+              <li>Tracks progress through the prompt.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Session behavior</h3>
+            <ul class="case-list">
+              <li>Does not show results before completion.</li>
+              <li>Ends the test when the prompt is completed.</li>
+              <li>Clears input and result state after retry.</li>
+              <li>Keeps reset behavior predictable.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>End-to-end flow</h3>
+            <ul class="case-list">
+              <li>Loads the app successfully.</li>
+              <li>Allows a user to complete a full typing session.</li>
+              <li>Shows the expected final result state.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Why Playwright</h2>
+        <p>
+          For this type of app, end-to-end tests are valuable because the main
+          risk is the full interaction, not one isolated function. Playwright
+          helped verify that keyboard input, DOM updates, visual states, and test
+          completion worked together.
+        </p>
+        <p>
+          This gave me confidence that the app still worked after UI changes,
+          styling changes, or refactors to the typing logic.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Edge Cases Considered</h2>
+        <p>
+          Because typing apps react to rapid input, edge cases can appear very
+          quickly. I considered these scenarios while shaping the logic and test
+          coverage.
+        </p>
+        <ul class="case-list">
+          <li>User types the wrong character.</li>
+          <li>User deletes input or changes direction during the test.</li>
+          <li>User completes the prompt exactly.</li>
+          <li>User restarts after finishing.</li>
+          <li>Timer should not start before the user begins typing.</li>
+          <li>Results should not appear before the session is complete.</li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>UI and Interaction Decisions</h2>
+        <p>
+          Visually, I wanted the page to feel direct and low-friction. The design
+          should support concentration: clear text, obvious feedback, and enough
+          whitespace to make the typing area feel calm.
+        </p>
+        <ul class="case-list">
+          <li>
+            The typing area stays visually central so the user always knows
+            where to focus.
+          </li>
+          <li>
+            Feedback is immediate, because delayed error feedback would make the
+            practice session less useful.
+          </li>
+          <li>
+            The result state is intentionally simple so users can quickly decide
+            whether to try again.
+          </li>
+          <li>
+            The layout is responsive so the experience remains usable across
+            different screen sizes.
+          </li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>Tradeoffs</h2>
+        <p>
+          The biggest tradeoff was choosing depth over breadth. It would have
+          been easy to add more visible features, but the project was stronger
+          when the core interaction was treated as the main feature.
+        </p>
+        <div class="case-steps">
+          <article>
+            <h3>Simple first, expandable later</h3>
+            <p>
+              I kept the first version focused on the core typing experience
+              instead of adding many modes immediately. This made the foundation
+              easier to validate.
+            </p>
+          </article>
+          <article>
+            <h3>Testing important paths first</h3>
+            <p>
+              Rather than trying to test everything, I focused testing effort on
+              the paths most likely to break the user experience: typing,
+              feedback, completion, and reset.
+            </p>
+          </article>
+          <article>
+            <h3>Product scope</h3>
+            <p>
+              Multiplayer was planned as a future direction, but I did not want
+              to add it before the single-player typing loop felt solid.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Constraints</h2>
+        <ul class="case-list">
+          <li>
+            Keep the first version small enough to ship and validate the core
+            typing loop.
+          </li>
+          <li>
+            Avoid overengineering multiplayer or analytics before the basic
+            practice session felt solid.
+          </li>
+          <li>
+            Keep the UI minimal so the interaction quality stayed at the center
+            of the project.
+          </li>
+          <li>
+            Add useful tests without making the development process too slow or
+            brittle.
+          </li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>What I Learned</h2>
+        <p>
+          Type Type reinforced that interactive frontend work is not only about
+          components and styling. The quality of the experience depends on how
+          well product flow, state design, and testing work together.
+        </p>
+        <p>
+          It also showed the value of keeping a project small enough to finish
+          but deep enough to exercise real engineering decisions.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Future Improvements</h2>
+        <ul class="case-list">
+          <li>Add multiplayer typing races with shared sessions.</li>
+          <li>Add richer stats such as accuracy trends and mistake patterns.</li>
+          <li>Add difficulty levels, custom prompts, and practice modes.</li>
+          <li>Improve accessibility around keyboard focus and screen reader feedback.</li>
+          <li>Persist user history so progress can be tracked over time.</li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>What This Project Shows</h2>
+        <p>
+          Type Type shows how I approach frontend engineering beyond visual
+          implementation. I think through the user loop, identify fragile
+          behavior, model state clearly, test the parts that matter, and keep the
+          interface focused on the user's task.
+        </p>
+        <p>
+          It also reflects the kind of work I enjoy: product-minded frontend
+          development where interaction quality, maintainable code, and user
+          experience all matter at the same time.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>Outcome</h2>
+        <p>
+          The result is a working typing practice platform with a stronger
+          engineering foundation than a simple demo. It shows how I approach an
+          interaction-heavy product: understand the user loop, make deliberate
+          product decisions, isolate risky logic, test important behavior, and
+          keep the UI focused on the task.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
