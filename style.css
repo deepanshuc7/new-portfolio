@@ -325,6 +325,7 @@ a {
 .project-card,
 .contact-card,
 .fields {
+  box-sizing: border-box;
   width: min(100%, 760px);
 }
 
@@ -408,6 +409,7 @@ a {
 }
 
 .skills {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(2, minmax(240px, 1fr));
   gap: 1.5rem;
@@ -975,6 +977,7 @@ form {
   width: 100%;
 }
 .form-control {
+  box-sizing: border-box;
   display: block;
   width: 100%;
 
@@ -1160,7 +1163,7 @@ footer div {
     display: block;
   }
   #cont .right .mob-title {
-    margin-left: -2rem;
+    margin-left: 0;
   }
   .left {
     width: 0%;
@@ -1186,18 +1189,22 @@ footer div {
   .right .r-inner-box.education-box,
   .right .r-inner-box.skills-box {
     margin-left: 0;
+    padding-left: 1rem;
     padding-right: 1rem;
   }
   .right .r-inner-box.work {
     margin-left: 0;
+    padding-left: 1rem;
     padding-right: 1rem;
   }
   .right .r-inner-box.experience-box {
     margin-left: 0;
+    padding-left: 1rem;
     padding-right: 1rem;
   }
   .right .r-inner-box.contact-box {
     margin-left: 0;
+    padding-left: 1rem;
     padding-right: 1rem;
   }
   .r-inner-box p {
@@ -1235,9 +1242,6 @@ footer div {
   nav ul li {
     padding: 0 1rem;
   }
-  /* .hero{
-        padding-left: 5rem;
-    } */
   .hero h3 {
     font-size: 70px;
     line-height: 80px;
@@ -1248,7 +1252,7 @@ footer div {
     font-size: 16rem;
   }
   .btn {
-    padding-left: 6rem;
+    padding-left: 0;
   }
   .btn.form {
     padding-left: 0;
@@ -1329,7 +1333,7 @@ footer div {
   }
   .r-inner-box .img {
     width: 100%;
-    padding-left: 6rem;
+    padding-left: 0;
   }
   .fields {
     padding-left: 0;
@@ -1377,111 +1381,6 @@ footer div {
 }
 
 @media screen and (max-width: 400px) {
-  /* #navbar{
-        padding: 60px 0;
-    }
-    #navbar ul{
-        margin-right: 1rem;
-    }
-    
-
-    .hero{
-        padding: 0;
-    }
-    .hero h3{
-        font-size: 56px;
-    }
-    .right{
-        margin: 0;
-        
-    }
-    .mob-title{
-        font-size: 2rem;
-       
-    }
-    #cont .right .mob-title{
-        margin-left: 0;
-    }
-    .r-inner-box{
-        padding-top: 0;
-    }
-    .r-inner-box h3{
-        padding-left: 8rem;
-    }
-    .right .r-inner-box p{
-        margin: 0;
-        padding: 0;
-        padding-left: 6rem;
-    }
-    .btn{
-        margin: 0;
-        padding: 1rem 6rem;
-    }
-    .hero i{
-        top: 4%;
-    right: 2%;
-    font-size: 15rem;
-    }
-    .right .r-inner-box h3::after{
-        left: 7rem;
-    }
-   .r-inner-box ul{
-       padding-left: 5rem;
-   }
-   .r-inner-box .skills li{
-    justify-content: space-between;
-    width: 380px;
-  
-    padding-right: 1rem;
-   }
-   .r-inner-box .skills li span{
-margin-left: 0;
-   }
-   .r-inner-box .skills li .circles{
-       margin-right: 20px;
-   }
-   
-    .skills i{
-        padding-left: 0;
-        font-size: 16px;
-    }
-    .r-inner-box .img{
-        width: 400px;
-        margin: 0;
-        padding:0;
-        padding-left: 5rem;
-    }
-    
-    .fields{
-        padding-left: 3rem;
-        width: 380px;
-    margin: auto;
-    margin-right: -2rem;
-    }
-    
-    footer div{
-        padding-left: 1rem;
-        
-    }
-    #cont .btn{
-        padding: 0;
-    }
-    .social.btm{
-        padding-left: 11rem;
-    margin-right: -0.5rem;
-    }
-    #cont .right .mob-title{
-        font-size: 2rem;
-    }
-    
-    .right .r-inner-box .skills i:first-child {
-        padding-left: 0;
-    }
-    .right .r-inner-box h3::after {
-        right: -0.5rem;
-        left: 5rem;
-    } */
-
   .hero h3 {
     font-size: 53px;
     line-height: 80px;
@@ -1513,27 +1412,30 @@ margin-left: 0;
     height: auto;
     margin-left: 0;
     min-height: auto;
+    padding-left: 1rem;
     padding-right: 1rem;
   }
   .right .r-inner-box.work {
     height: auto;
     margin-left: 0;
     min-height: auto;
+    padding-left: 1rem;
     padding-right: 1rem;
   }
   .right .r-inner-box.experience-box {
     height: auto;
     margin-left: 0;
     min-height: auto;
+    padding-left: 1rem;
     padding-right: 1rem;
   }
   .right .r-inner-box.contact-box {
     height: auto;
     align-items: center;
-    padding-left: 0;
+    padding-left: 1rem;
     margin-left: 0;
     min-height: auto;
-    padding-right: 0;
+    padding-right: 1rem;
     text-align: center;
   }
 
@@ -1556,7 +1458,7 @@ margin-left: 0;
   }
   .r-inner-box .skills i {
     padding-left: 0;
-    margin-right: -10px;
+    margin-right: 0;
   }
   .contact-section {
     padding-top: 0;
@@ -1564,7 +1466,9 @@ margin-left: 0;
   .fields {
     margin-left: auto;
     margin-right: auto;
-    padding: 2rem 1rem 0;
+    padding: 2rem 0.25rem 0;
+    width: 100%;
+    box-sizing: border-box;
   }
   form {
     margin: 0 auto;
