@@ -1,7 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap");
-
 * {
   padding: 0;
   margin: 0;
@@ -329,6 +325,10 @@ a {
 .theme-dark input::placeholder,
 .theme-dark textarea::placeholder {
   color: rgba(244, 239, 230, 0.55);
+}
+
+h3{
+  font-family: "Geist Pixel", "Manrope", sans-serif;
 }
 
 .hero {
@@ -1230,6 +1230,7 @@ i {
 }
 
 .mob-title {
+  font-family: "Geist Pixel", "Manrope", sans-serif;
   display: none;
   font-size: 60px;
   font-weight: 300;
