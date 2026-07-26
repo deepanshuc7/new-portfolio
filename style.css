@@ -1,13 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  color: #323031;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+p,
+li {
+  line-height: 1.75;
 }
 
 .noisy {
@@ -29,8 +41,6 @@ html {
   -ms-flex-align: center;
   align-items: center;
   background-image: url(./img/noise.gif);
-  /*background-image: url(./img/dark-noise-2.gif);*/
-  /*background-image: url(./img/film-grain.gif);*/
   background-size: 100px 100px;
   opacity: 0.3;
 }
@@ -54,30 +64,16 @@ html {
   position: fixed;
   width: 100%;
   top: -20%;
-  /* height: 20vh; */
   padding: 60px 10px;
   align-items: center;
   justify-content: space-around;
   z-index: 99;
   transition: background-color 0.25s ease;
   opacity: 0;
-
-  /*  background-color: white; */
-  /*  opacity: 0.5; */
 }
 
-/* #nav-id.fixed{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    background-color: #fff;
-    opacity: 0.6;
-    border-bottom: 5px solid #ffffff; 
- }  */
-
 nav .logo a {
+  font-family: "Geist Pixel", "Manrope", sans-serif;
   color: #ffc857;
   font-size: 28px;
   position: relative;
@@ -111,15 +107,228 @@ nav ul li a.is-active::after {
   background-color: #ffc857;
 }
 nav .social a {
+  color: #323031;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 18px;
+  line-height: 1;
   transition: all 0.3s ease;
 }
 
-nav .social a:hover {
+nav .social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav .social i {
+  color: inherit;
+  font-size: inherit;
+  line-height: 1;
+  padding-right: 0;
+  transition: all 0.3s ease;
+}
+
+nav .social i::before {
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+nav .social a:hover,
+nav .social a:hover i,
+nav .social a:hover i::before,
+nav .social .theme-toggle:hover,
+nav .social .theme-toggle:hover i,
+nav .social .theme-toggle:hover i::before {
   color: #ffc857;
 }
+
+.theme-toggle {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0;
+  border-radius: 0;
+  color: #323031;
+  background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  color: #ffc857;
+}
+
+.theme-toggle i {
+  font-size: inherit;
+  line-height: 1;
+  padding-right: 0;
+  transition: all 0.3s ease;
+}
+
 a {
   text-decoration: none;
   color: black;
+}
+
+.theme-dark body {
+  color: #f4efe6;
+  background-color: #11100f;
+}
+
+.theme-dark .noisy {
+  opacity: 0.18;
+  filter: invert(1) contrast(1.25);
+  mix-blend-mode: screen;
+}
+
+.theme-dark a,
+.theme-dark nav ul li a,
+.theme-dark .hero h3,
+.theme-dark .hero #anshu,
+.theme-dark .education-card h4,
+.theme-dark .skill-group h4,
+.theme-dark .experience-card h4,
+.theme-dark .experience-role,
+.theme-dark .project-summary,
+.theme-dark .project-link,
+.theme-dark .contact-links a,
+.theme-dark .social.btm i,
+.theme-dark .btn,
+.theme-dark button,
+.theme-dark input,
+.theme-dark textarea {
+  color: #f4efe6;
+}
+
+.theme-dark nav .logo a,
+.theme-dark nav ul li a:hover,
+.theme-dark nav ul li a.is-active,
+.theme-dark .hero #deep,
+.theme-dark .mob-title,
+.theme-dark .right .r-inner-box h3,
+.theme-dark .impact-card span,
+.theme-dark .case-hero h1,
+.theme-dark .case-panel h2,
+.theme-dark .case-section h2,
+.theme-dark .case-steps h3,
+.theme-dark .case-checklist h3,
+.theme-dark .case-quote,
+.theme-dark blockquote {
+  color: #ffc857;
+}
+
+.theme-dark nav .social a,
+.theme-dark nav .social .theme-toggle {
+  color: #f4efe6;
+}
+
+.theme-dark nav .social a:hover,
+.theme-dark nav .social a:hover i,
+.theme-dark nav .social a:hover i::before,
+.theme-dark nav .social .theme-toggle:hover,
+.theme-dark nav .social .theme-toggle:hover i,
+.theme-dark nav .social .theme-toggle:hover i::before {
+  color: #ffc857;
+}
+
+.theme-dark .circle {
+  border-color: rgba(255, 200, 87, 0.8);
+}
+
+.theme-dark .scribble path {
+  stroke: #f4efe6;
+}
+
+.theme-dark .scribble-design path {
+  stroke: #ffc857;
+}
+
+.theme-dark .left span {
+  color: rgba(244, 239, 230, 0.18);
+}
+
+.theme-dark .about-card,
+.theme-dark .impact-card,
+.theme-dark .education-card,
+.theme-dark .skill-group,
+.theme-dark .experience-card,
+.theme-dark .project-card,
+.theme-dark .contact-card,
+.theme-dark .case-hero,
+.theme-dark .case-panel,
+.theme-dark .case-section,
+.theme-dark .case-steps article {
+  background-color: rgba(17, 16, 15, 0.68);
+  border-left-color: #ffc857;
+}
+
+.theme-dark .skill-group li,
+.theme-dark .experience-tools li,
+.theme-dark .project-tools li {
+  color: #f4efe6;
+  background-color: transparent;
+  border-color: rgba(244, 239, 230, 0.32);
+}
+
+.theme-dark .education-card p,
+.theme-dark .education-topics li {
+  color: rgba(244, 239, 230, 0.82);
+}
+
+.theme-dark .education-topics strong {
+  color: #f4efe6;
+}
+
+.theme-dark .case-metrics article,
+.theme-dark .case-problem-map article,
+.theme-dark .case-decision-grid article,
+.theme-dark .case-architecture article,
+.theme-dark .case-state-flow article,
+.theme-dark .case-checklist article,
+.theme-dark .case-flow article {
+  color: #f4efe6;
+  background-color: transparent;
+  border-color: rgba(244, 239, 230, 0.32);
+}
+
+.theme-dark .project-type,
+.theme-dark .project-note,
+.theme-dark .experience-date,
+.theme-dark .experience-meta,
+.theme-dark .case-label,
+.theme-dark .case-decision-label,
+.theme-dark .case-media figcaption {
+  color: rgba(244, 239, 230, 0.68);
+}
+
+.theme-dark .project-image,
+.theme-dark .case-hero-image,
+.theme-dark .case-media img,
+.theme-dark .r-inner-box .img {
+  background-color: #1a1817;
+  border-color: rgba(244, 239, 230, 0.14);
+}
+
+.theme-dark .form-control,
+.theme-dark input,
+.theme-dark textarea {
+  color: #f4efe6;
+  background-color: rgba(17, 16, 15, 0.42);
+  border-color: rgba(244, 239, 230, 0.28);
+}
+
+.theme-dark input::placeholder,
+.theme-dark textarea::placeholder {
+  color: rgba(244, 239, 230, 0.55);
 }
 
 .hero {
@@ -189,6 +398,14 @@ a {
   z-index: 0;
 }
 
+.hero-text {
+  font-family: "Geist Pixel", "Manrope", sans-serif;
+}
+
+.hero-text * {
+  font-family: inherit;
+}
+
 .hero h3 {
   font-size: 184px;
   font-weight: 700;
@@ -196,9 +413,87 @@ a {
   display: block;
   text-align: center;
   line-height: 180px;
+  font-weight: 400;
+  isolation: isolate;
   position: relative;
   z-index: 1;
+  letter-spacing: 2px;
 }
+
+.hero-text h3 {
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.hero-text h3::before,
+.hero-text h3::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero-text h3:hover,
+.hero-text h3:focus-visible {
+  text-shadow: 3px 0 0 rgba(255, 200, 87, 0.45),
+    -3px 0 0 rgba(50, 48, 49, 0.18);
+}
+
+.hero-text h3:hover::before,
+.hero-text h3:focus-visible::before {
+  color: #ffc857;
+  animation: pixel-shift-a 0.42s steps(2, end) both;
+  opacity: 0.55;
+}
+
+.hero-text h3:hover::after,
+.hero-text h3:focus-visible::after {
+  color: currentColor;
+  animation: pixel-shift-b 0.42s steps(2, end) both;
+  opacity: 0.32;
+}
+
+@keyframes pixel-shift-a {
+  0%,
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    clip-path: inset(12% 0 62% 0);
+    transform: translate(4px, -2px);
+  }
+  50% {
+    clip-path: inset(46% 0 28% 0);
+    transform: translate(-3px, 2px);
+  }
+  75% {
+    clip-path: inset(72% 0 8% 0);
+    transform: translate(2px, 3px);
+  }
+}
+
+@keyframes pixel-shift-b {
+  0%,
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0, 0);
+  }
+  25% {
+    clip-path: inset(66% 0 10% 0);
+    transform: translate(-4px, 2px);
+  }
+  50% {
+    clip-path: inset(18% 0 54% 0);
+    transform: translate(3px, -1px);
+  }
+  75% {
+    clip-path: inset(38% 0 36% 0);
+    transform: translate(-2px, -3px);
+  }
+}
+
 .hero #deep {
   display: inline-block;
   color: #ffc857;
@@ -215,6 +510,10 @@ a {
   font-weight: 300;
   position: relative;
   z-index: 1;
+}
+
+.hero-text #welcome {
+  text-align: center;
 }
 
 .container {
@@ -238,8 +537,6 @@ a {
   position: absolute;
   left: 40%;
   top: 35%;
-  /* margin-top: 5rem; */
-  /* margin-bottom: 5rem; */
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
@@ -272,6 +569,7 @@ a {
   left: 6%;
   z-index: -2;
   display: block;
+  font-family: "Geist Pixel", "Manrope", sans-serif;
   font-size: 200px;
   font-weight: 300;
   opacity: 0.7;
@@ -295,7 +593,7 @@ a {
   justify-content: center;
   background-color: transparent;
   line-height: 2rem;
-  letter-spacing: 2px;
+  letter-spacing: 1.2px;
 }
 .r-inner-box.work {
   height: auto;
@@ -336,7 +634,7 @@ a {
 .experience-card,
 .project-card,
 .contact-card {
-  border-left: 4px solid #ffc857;
+  border-left: 2px solid #ffc857;
   padding: 1.25rem;
   background-color: rgba(255, 255, 255, 0.45);
 }
@@ -408,6 +706,14 @@ a {
   padding-bottom: 0.6rem;
 }
 
+.theme-dark .right .r-inner-box .education-topics li {
+  color: rgba(244, 239, 230, 0.82);
+}
+
+.theme-dark .right .r-inner-box .education-topics strong {
+  color: #f4efe6;
+}
+
 .skills {
   box-sizing: border-box;
   display: grid;
@@ -443,6 +749,12 @@ a {
   line-height: 1.2;
   padding: 0.45rem 0.65rem;
   background-color: rgba(255, 255, 255, 0.65);
+}
+
+.theme-dark .right .r-inner-box .skill-group li {
+  color: #f4efe6;
+  background-color: transparent;
+  border-color: rgba(244, 239, 230, 0.32);
 }
 
 .right .r-inner-box.experience-box {
@@ -520,6 +832,12 @@ a {
   background-color: rgba(255, 255, 255, 0.65);
 }
 
+.theme-dark .right .r-inner-box .experience-tools li {
+  color: #f4efe6;
+  background-color: transparent;
+  border-color: rgba(244, 239, 230, 0.32);
+}
+
 .project-card {
   width: min(100%, 760px);
 }
@@ -570,6 +888,12 @@ a {
   background-color: rgba(255, 255, 255, 0.65);
 }
 
+.theme-dark .right .r-inner-box .project-tools li {
+  color: #f4efe6;
+  background-color: transparent;
+  border-color: rgba(244, 239, 230, 0.32);
+}
+
 .project-actions {
   display: flex;
   flex-wrap: wrap;
@@ -617,6 +941,11 @@ a {
   background-color: transparent;
 }
 
+.case-study p,
+.case-study li {
+  letter-spacing: 1.2px;
+}
+
 .case-study {
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
@@ -642,7 +971,7 @@ a {
 .case-panel,
 .case-section,
 .case-steps article {
-  border-left: 4px solid #ffc857;
+  border-left: 2px solid #ffc857;
   background-color: rgba(255, 255, 255, 0.45);
   padding: 1.5rem;
 }
@@ -764,6 +1093,13 @@ a {
   padding-bottom: 0.5rem;
 }
 
+.theme-dark .case-metrics h3,
+.theme-dark .case-problem-map h3,
+.theme-dark .case-decision-grid h3,
+.theme-dark .case-checklist h3 {
+  color: #ffc857;
+}
+
 .case-decision-label {
   color: #495057;
   font-size: 13px;
@@ -808,6 +1144,10 @@ a {
   padding-bottom: 0.5rem;
 }
 
+.theme-dark .case-steps h3 {
+  color: #ffc857;
+}
+
 .case-list {
   padding-left: 1.2rem;
 }
@@ -847,7 +1187,7 @@ a {
 }
 
 .case-quote {
-  border-left: 4px solid #ffc857;
+  border-left: 2px solid #ffc857;
   color: #323031;
   font-size: 20px;
   font-weight: 700;
@@ -904,8 +1244,6 @@ i {
   padding: 1rem 0;
   font-weight: 300;
   font-size: 18px;
-  /*  line-height: 1;
-    letter-spacing: 0.040em; */
 }
 .btn svg {
   fill: none;
@@ -923,14 +1261,6 @@ i {
   transform: translate(-50%, -50%);
   transition: stroke-dashoffset 0s 0.2s, opacity 0.2s;
 }
-/* .contact{
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 70%;
-  } */
 .contact-section {
   position: relative;
   padding-top: 0;
@@ -1061,6 +1391,17 @@ button {
     animation: none;
     stroke-dashoffset: 0;
   }
+  .hero-text h3:hover,
+  .hero-text h3:focus-visible {
+    text-shadow: none;
+  }
+  .hero-text h3:hover::before,
+  .hero-text h3:hover::after,
+  .hero-text h3:focus-visible::before,
+  .hero-text h3:focus-visible::after {
+    animation: none;
+    opacity: 0;
+  }
 }
 
 footer div {
@@ -1187,21 +1528,9 @@ footer div {
   .right .r-inner-box.about-intro,
   .right .r-inner-box.impact-box,
   .right .r-inner-box.education-box,
-  .right .r-inner-box.skills-box {
-    margin-left: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .right .r-inner-box.work {
-    margin-left: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .right .r-inner-box.experience-box {
-    margin-left: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+  .right .r-inner-box.skills-box,
+  .right .r-inner-box.work,
+  .right .r-inner-box.experience-box,
   .right .r-inner-box.contact-box {
     margin-left: 0;
     padding-left: 1rem;
@@ -1237,6 +1566,13 @@ footer div {
     display: none;
   }
   .social {
+    display: none;
+  }
+  nav .social {
+    display: flex;
+    gap: 0.75rem;
+  }
+  nav .social a {
     display: none;
   }
   nav ul li {
@@ -1399,7 +1735,6 @@ footer div {
     padding-bottom: 3rem;
     padding-left: 1rem;
     margin-left: 0;
-    /* margin-top: -4rem; */
     padding-right: 1rem;
     box-sizing: border-box;
     height: auto;
@@ -1408,20 +1743,8 @@ footer div {
   .right .r-inner-box.about-intro,
   .right .r-inner-box.impact-box,
   .right .r-inner-box.education-box,
-  .right .r-inner-box.skills-box {
-    height: auto;
-    margin-left: 0;
-    min-height: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .right .r-inner-box.work {
-    height: auto;
-    margin-left: 0;
-    min-height: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+  .right .r-inner-box.skills-box,
+  .right .r-inner-box.work,
   .right .r-inner-box.experience-box {
     height: auto;
     margin-left: 0;

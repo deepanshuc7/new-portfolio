@@ -21,6 +21,17 @@
     <meta property="og:image" content="https://deepanshu.space/img/mumbai-cafe.png" />
     <link rel="shortcut icon" href="https://deepanshu.space/favicon.ico" />
     <link rel="stylesheet" href="./style.css" />
+    <script>
+      (function () {
+        var storedTheme = localStorage.getItem("theme");
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var theme = storedTheme || (prefersDark ? "dark" : "light");
+
+        if (theme === "dark") {
+          document.documentElement.classList.add("theme-dark");
+        }
+      })();
+    </script>
     <title>Mumbai Cafe UX Case Study | Deepanshu Chaudhary</title>
   </head>
   <body class="case-study-page">
