@@ -1,6 +1,6 @@
 # Deepanshu Portfolio
 
-A personal portfolio website showcasing my work across frontend development, full-stack engineering, UI/UX design, and product thinking.
+A personal portfolio website showcasing my work across full-stack engineering, backend/API thinking, product-minded interfaces, UI/UX design, and delivery practices.
 
 Live site: [deepanshu.space](https://deepanshu.space)
 
@@ -19,7 +19,7 @@ The site includes selected projects, case studies, education, experience, skills
 
 ## Case Studies
 
-- **Type Type** - a typing practice app focused on interaction design, state management, feedback loops, and frontend implementation.
+- **Type Type** - a typing practice app focused on interaction design, state management, feedback loops, test coverage, and full-stack-ready architecture.
 - **Mumbai Cafe** - a restaurant website case study focused on visual design, branding, layout, and user experience.
 
 ## Tech Stack
